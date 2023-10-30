@@ -107,7 +107,7 @@ session_start();
                 <nav class="sidebar-nav">
                    <ul id="sidebarnav">
                         <li class="nav-devider"></li>
-                        <li class="nav-label">Home</li>
+                        <li class="nav-label">Beranda</li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="dashboard.php">Dashboard</a></li>
