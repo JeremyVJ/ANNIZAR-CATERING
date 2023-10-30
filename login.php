@@ -71,7 +71,7 @@ if(isset($_POST['submit']))   // if button is submit
     <form action="" method="post">
       <input type="text" placeholder="Username"  name="username"/>
       <input type="password" placeholder="Password" name="password"/>
-      <input type="submit" id="buttn" name="submit" value="login" />
+     <input type="submit" id="buttn" name="submit" value="login" />
     </form>
   </div>
   
