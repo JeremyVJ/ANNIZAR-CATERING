@@ -66,7 +66,7 @@ if(isset($_POST['submit']))   // if button is submit
   </div>
   <div class="form">
     <h2>Login to your account</h2>
-	  <span style="color:red;"><?php echo $message; ?></span> 
+	<span style="color:red;"><?php echo $message; ?></span> 
    <span style="color:green;"><?php echo $success; ?></span>
     <form action="" method="post">
       <input type="text" placeholder="Username"  name="username"/>
