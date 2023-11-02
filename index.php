@@ -167,7 +167,7 @@ input:checked + .slide-container .nav label { display: block; }
         <!--header starts-->
         <header id="header" class="header-scroll top-header headrom">
             <!-- .navbar -->
-            <nav class="navbar navbar-dark">
+            <nav class="navbar navbar-dark ">
                 <div class="container">
                     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
                     <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/food-picky-logo.png" alt=""> </a>
@@ -199,47 +199,44 @@ input:checked + .slide-container .nav label { display: block; }
         </header>
         <!-- banner part starts -->
         
-        <section class="bg-image pb-5">
-        <div>
-        <div class="carousel">
-            <ul class="slides">
-                <input type="radio" name="radio-buttons" id="img-1" checked />
-                <li class="slide-container">
-                    <div class="slide-image">
-                        <img src="https://cdn-cas.orami.co.id/parenting/images/nasi_kuning.width-800.png">
-                    </div> 
-                </li>
-                <input type="radio" name="radio-buttons" id="img-2" />
-                <li class="slide-container">
-                    <div class="slide-image">
-                        <img src="https://cf.shopee.ph/file/ph-50009109-f39d163fc35e044c5ed8295fd7a5b238_xxhdpi">
-                    </div>
-                </li>
-                <input type="radio" name="radio-buttons" id="img-3" />
-                <li class="slide-container">
-                    <div class "slide-container">
-                        <img src="https://speakzeasy.files.wordpress.com/2015/05/twa_blogpic_timisoara-4415.jpg">
-                    </div>
-                </li>
-                <div class="carousel-dots">
-                    <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
-                    <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
-                    <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
+        <section class="bg-image">
+                <div class="carousel">
+                    <ul class="slides">
+                        <input type="radio" name="radio-buttons" id="img-1" checked />
+                        <li class="slide-container">
+                            <div class="slide-image">
+                                <img src="https://cdn-cas.orami.co.id/parenting/images/nasi_kuning.width-800.png">
+                            </div> 
+                        </li>
+                        <input type="radio" name="radio-buttons" id="img-2" />
+                        <li class="slide-container">
+                            <div class="slide-image">
+                                <img src="https://cdn-cas.orami.co.id/parenting/images/nasi_kuning.width-800.png">
+                            </div>
+                        </li>
+                        <input type="radio" name="radio-buttons" id="img-3" />
+                        <li class="slide-container">
+                            <div class="slide-container">
+                                <img src="https://cdn-cas.orami.co.id/parenting/images/nasi_kuning.width-800.png">
+                            </div>
+                        </li>
+                        <div class="carousel-dots">
+                            <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
+                            <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
+                            <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
+                        </div>
+                    </ul>
                 </div>
-            </ul>
-        </div>
-    </div>
         </section>
 
     
 
         <!-- banner part ends -->
         <!-- Popular block starts -->
-        <section class="popular">
+        <section class="popular" id="popular">
             <div class="container">
                 <div class="title text-xs-center m-b-30">
-                    <h2>Popular Dishes of the Month</h2>
-                    <p class="lead">The easiest way to your favourite food</p>
+                    <h2>Menu Favorit</h2>
                 </div>
                 <div class="row">
 <?php 
@@ -255,7 +252,7 @@ input:checked + .slide-container .nav label { display: block; }
                                         <div class="content">
                                         <h5><a href="dishes.php?res_id=' . $r['rs_id'] . '">' . $r['title'] . '</a></h5>
                                     <div class="product-name">' . $r['slogan'] . '</div>
-                                <div class="price-btn-block"> <span class="price">IDR ' . number_format($price_in_idr) . '</span> <a href="dishes.php?res_id=' . $r['rs_id'] . '" class="btn theme-btn-dash pull-right">Order Now</a> </div>
+                                <div class="price-btn-block"> <span class="price">IDR ' . number_format($price_in_idr) . '</span> <a href="dishes.php?res_id=' . $r['rs_id'] . '" class="btn theme-btn-dash pull-right">Pesan Sekarang</a> </div>
                             </div>
                         </div>
                     </div>';
@@ -266,7 +263,7 @@ input:checked + .slide-container .nav label { display: block; }
         </section>
         <!-- Popular block ends -->
         <!-- How it works block starts -->
-        <section class="how-it-works">
+        <section class="how-it-works" id="step">
             <div class="container">
                 <div class="text-xs-center">
                     <h2>Easy 3 Step Order</h2>
@@ -321,7 +318,7 @@ input:checked + .slide-container .nav label { display: block; }
         </section>
         <!-- How it works block ends -->
         <!-- Featured restaurants starts -->
-        <section class="featured-restaurants">
+        <section class="featured-restaurants" id="paket-makanan">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4">
@@ -395,50 +392,27 @@ input:checked + .slide-container .nav label { display: block; }
             <div class="container">
                 <!-- top footer statrs -->
                 <div class="row top-footer">
-                    <div class="col-xs-12 col-sm-3 footer-logo-block color-gray">
-                        <a href="#"> <img src="images/food-picky-logo.png" alt="Footer logo"> </a> <span>Order Delivery &amp; Take-Out </span> </div>
-                    <div class="col-xs-12 col-sm-2 about color-gray">
-                        <h5>About Us</h5>
+                    <div class="col-lg-2"></div>
+                    <div class="col-xs-12 col-sm-2 col-lg-4 about color-gray">
+                        <h5>Annizar Catering</h5>
+                        <p>annizarcatering@gmail.com</p>
+                        <p>Jl. Kalimantan no 100</p>
+                        <p>Jember</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-2 col-lg-3 about color-gray">
+                        <h5>TAUTAN</h5>
                         <ul>
-                            <li><a href="#">About us</a> </li>
-                            <li><a href="#">History</a> </li>
-                            <li><a href="#">Our Team</a> </li>
-                            <li><a href="#">We are hiring</a> </li>
+                            <li><a href="#">Beranda</a> </li>
+                            <li><a href="#popular">Favorit</a> </li>
+                            <li><a href="#step">Tata Cara</a> </li>
+                            <li><a href="#paket-makanan">Paket Makanan</a> </li>
                         </ul>
                     </div>
-                    <div class="col-xs-12 col-sm-2 how-it-works-links color-gray">
-                        <h5>How it Works</h5>
+                    <div class="col-xs-12 col-sm-2 col-lg-3 about color-gray">
+                    
                         <ul>
-                            <li><a href="#">Enter your location</a> </li>
-                            <li><a href="#">Choose restaurant</a> </li>
-                            <li><a href="#">Choose meal</a> </li>
-                            <li><a href="#">Pay via credit card</a> </li>
-                            <li><a href="#">Wait for delivery</a> </li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-sm-2 pages color-gray">
-                        <h5>Pages</h5>
-                        <ul>
-                            <li><a href="#">Search results page</a> </li>
-                            <li><a href="#">User Sing Up Page</a> </li>
-                            <li><a href="#">Pricing page</a> </li>
-                            <li><a href="#">Make order</a> </li>
-                            <li><a href="#">Add to cart</a> </li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 popular-locations color-gray">
-                        <h5>Popular locations</h5>
-                        <ul>
-                            <li><a href="#">Sarajevo</a> </li>
-                            <li><a href="#">Split</a> </li>
-                            <li><a href="#">Tuzla</a> </li>
-                            <li><a href="#">Sibenik</a> </li>
-                            <li><a href="#">Zagreb</a> </li>
-                            <li><a href="#">Brcko</a> </li>
-                            <li><a href="#">Beograd</a> </li>
-                            <li><a href="#">New York</a> </li>
-                            <li><a href="#">Gradacac</a> </li>
-                            <li><a href="#">Los Angeles</a> </li>
+                            <li><a href="registration.php">Daftar</a> </li>
+                            <li><a href="logout.php">Keluar</a> </li>
                         </ul>
                     </div>
                 </div>
