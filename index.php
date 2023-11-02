@@ -198,7 +198,6 @@ input:checked + .slide-container .nav label { display: block; }
             <!-- /.navbar -->
         </header>
         <!-- banner part starts -->
-        
         <section class="bg-image">
                 <div class="carousel">
                     <ul class="slides">
@@ -365,10 +364,6 @@ input:checked + .slide-container .nav label { display: block; }
 																<!--end:col -->
 																<div class="col-xs-12 col-sm-9 col-md-12 col-lg-9">
 																	<h5><a href="dishes.php?res_id='.$rows['rs_id'].'" >'.$rows['title'].'</a></h5> <span>'.$rows['address'].'</span>
-																	<div class="bottom-part">
-																		<div class="cost"><i class="fa fa-check"></i> Min $ 10,00</div>
-																		<div class="mins"><i class="fa fa-motorcycle"></i> 30 min</div>
-																	</div>
 																</div>
 																<!-- end:col -->
 															</div>
