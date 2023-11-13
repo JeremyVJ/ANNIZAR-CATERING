@@ -182,7 +182,6 @@ hr {
 .btn,
 .btn-group-lg > .btn,
 .btn-lg,
-
 .img-rounded {
   border-radius: 2px;
 }
@@ -1464,7 +1463,6 @@ footer li a {
   display: inline-block;
 }
 
-
 @media (min-width: 320px) and (max-width: 768px) {
   .footer-logo-block {
     margin-bottom: 25px;
@@ -2677,3 +2675,11 @@ a[aria-expanded="false"] .fa-angle-down {
   color: #3a3e47;
 }
 
+.border-rad {
+  border-radius: 7px;
+}
+
+.text-white {
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}

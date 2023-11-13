@@ -104,7 +104,7 @@ if(isset($_POST['submit'] )) //if submit btn is pressed
             <nav class="navbar navbar-dark">
                <div class="container">
                   <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                  <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/food-picky-logo.png" alt=""> </a>
+                  <a class="navbar-brand" href="index.php"> <img style="width:100px" src="images/assets/logocrop.png" alt=""> </a>
                   <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                      <ul class="nav navbar-nav">
 							<li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
@@ -132,61 +132,73 @@ if(isset($_POST['submit'] )) //if submit btn is pressed
             </nav>
             <!-- /.navbar -->
          </header>
-         <div class="page-wrapper" style="background-image: url('../images/regis.jpg'); background-size: cover;  background-repeat: no-repeat;  background-position: center; padding: 30px;">
+         <div class="page-wrapper" style="background-image: url('images/footer_pattern.png'); background-size:cover;padding-left:50px;padding-right:50px;">
             <div class="breadcrumb" >
                <div class="container">
-                  <ul>
-                     <li><a href="#" class="active">
-					  <span style="color:red;"><?php echo $message; ?></span>
-					   <span style="color:green;">
-								<?php echo $success; ?>
-										</span>
-					</a></li>
-                  </ul>
                   
-                  <form action="" method="post">
+                  
+                  <div style="display:flex; align-items:center;">
+                     <div>
+                  <form style="width:100%; padding-right:30px; padding-left:30px;" action="" method="post">
                   <div class="row">
 								  <div class="form-group col-sm-12">
-                                       <label for="exampleInputEmail1">User-Name</label>
-                                       <input class="form-control" type="text" name="username" id="example-text-input" placeholder="UserName"> 
+                                       <label class="text-white" for="exampleInputEmail1">User-Name</label>
+                                       <input class="form-control border-rad" type="text" name="username" id="example-text-input" placeholder="UserName"> 
                                     </div>
                                     <div class="form-group col-sm-6">
-                                       <label for="exampleInputEmail1">First Name</label>
-                                       <input class="form-control" type="text" name="firstname" id="example-text-input" placeholder="First Name"> 
+                                       <label class="text-white" for="exampleInputEmail1">Nama Depan</label>
+                                       <input class="form-control border-rad" type="text" name="firstname" id="example-text-input" placeholder="First Name"> 
                                     </div>
                                     <div class="form-group col-sm-6">
-                                       <label for="exampleInputEmail1">Last Name</label>
-                                       <input class="form-control" type="text" name="lastname" id="example-text-input-2" placeholder="Last Name"> 
+                                       <label class="text-white" for="exampleInputEmail1">Nama Belakang</label>
+                                       <input class="form-control border-rad" type="text" name="lastname" id="example-text-input-2" placeholder="Last Name"> 
                                     </div>
                                     <div class="form-group col-sm-6">
-                                       <label for="exampleInputEmail1">Email address</label>
-                                       <input type="text" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> <small id="emailHelp" class="form-text text-muted">We"ll never share your email with anyone else.</small> 
+                                       <label class="text-white" for="exampleInputEmail1">Email</label>
+                                       <input type="text" class="form-control border-rad" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> 
                                     </div>
                                     <div class="form-group col-sm-6">
-                                       <label for="exampleInputEmail1">Phone number</label>
-                                       <input class="form-control" type="text" name="phone" id="example-tel-input-3" placeholder="Phone"> <small class="form-text text-muted">We"ll never share your email with anyone else.</small> 
+                                       <label class="text-white" for="exampleInputEmail1">No. Telepon</label>
+                                       <input class="form-control border-rad" type="text" name="phone" id="example-tel-input-3" placeholder="Phone">  
                                     </div>
                                     <div class="form-group col-sm-6">
-                                       <label for="exampleInputPassword1">Password</label>
-                                       <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password"> 
+                                       <label class="text-white" for="exampleInputPassword1">Password</label>
+                                       <input type="password" class="form-control border-rad" name="password" id="exampleInputPassword1" placeholder="Password"> 
                                     </div>
                                     <div class="form-group col-sm-6">
-                                       <label for="exampleInputPassword1">Repeat password</label>
-                                       <input type="password" class="form-control" name="cpassword" id="exampleInputPassword2" placeholder="Password"> 
+                                       <label class="text-white" for="exampleInputPassword1">Konfirmasi password</label>
+                                       <input type="password" class="form-control border-rad" name="cpassword" id="exampleInputPassword2" placeholder="Password"> 
                                     </div>
-									 <div class="form-group col-sm-12">
-                                       <label for="exampleTextarea">Delivery Address</label>
-                                       <textarea class="form-control" id="exampleTextarea"  name="address" rows="3"></textarea>
+                                    <div class="form-group col-sm-12">
+                                       <label class="text-white" for="exampleTextarea">Alamat</label>
+                                       <textarea class="form-control border-rad" id="exampleTextarea"  name="address" rows="3"></textarea>
                                     </div>
                                    
                                  </div>
                                 
                                  <div class="row">
                                     <div class="col-sm-4">
-                                       <p> <input type="submit" value="Register" name="submit" class="btn theme-btn"> </p>
+                                       <p> <input type="submit" value="Register" name="submit" class="btn theme-btn border-rad"> </p>
                                     </div>
+                                    <ul>
+                     <li><a href="#" class="active">
+					  <span style="color:red;text-align:center"><?php echo $message; ?></span>
+					   <span style="color:green;">
+								<?php echo $success; ?>
+										</span>
+					</a></li>
+                  </ul>
                                  </div>
                               </form>
+                              </div>
+                              <div>
+                                 <h1 style="color:white; text-align:center; font-size: 24px; margin-top:25px; font-weight:800;text-shadow:1px 1px 1px rgba(0,0,0,0.5);">Disini tempatnya makanan enak!</h1>
+                                 <p style="text-align:center; color:white;text-shadow:1px 1px 1px rgba(0,0,0,0.5);">Isi data dirimu dulu ya</p>
+                                 <hr>
+                                 <img src="images/assets/iconregister.png" style="width:300px;" alt="">
+                              </div>
+                              </div>
+                              
                   
                </div>
             </div>
@@ -194,62 +206,7 @@ if(isset($_POST['submit'] )) //if submit btn is pressed
     
 </style>
             
-            <!-- start: FOOTER -->
-            <footer class="footer" >
-               <div class="container" >
-                  <!-- top footer statrs -->
-                  <div class="row top-footer">
-                     <div class="col-xs-12 col-sm-3 footer-logo-block color-gray">
-                        <a href="#"> <img src="images/food-picky-logo.png" alt="Footer logo"> </a> <span>Order Delivery &amp; Take-Out </span> 
-                     </div>
-                     <div class="col-xs-12 col-sm-2 about color-gray">
-                        <h5>About Us</h5>
-                        <ul>
-                           <li><a href="#">About us</a> </li>
-                           <li><a href="#">History</a> </li>
-                           <li><a href="#">Our Team</a> </li>
-                           <li><a href="#">We are hiring</a> </li>
-                        </ul>
-                     </div>
-                     <div class="col-xs-12 col-sm-2 how-it-works-links color-gray">
-                        <h5>How it Works</h5>
-                        <ul>
-                           <li><a href="#">Enter your location</a> </li>
-                           <li><a href="#">Choose restaurant</a> </li>
-                           <li><a href="#">Choose meal</a> </li>
-                           <li><a href="#">Pay via credit card</a> </li>
-                           <li><a href="#">Wait for delivery</a> </li>
-                        </ul>
-                     </div>
-                     <div class="col-xs-12 col-sm-2 pages color-gray">
-                        <h5>Pages</h5>
-                        <ul>
-                           <li><a href="#">Search results page</a> </li>
-                           <li><a href="#">User Sing Up Page</a> </li>
-                           <li><a href="#">Pricing page</a> </li>
-                           <li><a href="#">Make order</a> </li>
-                           <li><a href="#">Add to cart</a> </li>
-                        </ul>
-                     </div>
-                     <div class="col-xs-12 col-sm-3 popular-locations color-gray">
-                        <h5>Popular locations</h5>
-                        <ul>
-                           <li><a href="#">Sarajevo</a> </li>
-                           <li><a href="#">Split</a> </li>
-                           <li><a href="#">Tuzla</a> </li>
-                           <li><a href="#">Sibenik</a> </li>
-                           <li><a href="#">Zagreb</a> </li>
-                           <li><a href="#">Brcko</a> </li>
-                           <li><a href="#">Beograd</a> </li>
-                           <li><a href="#">New York</a> </li>
-                           <li><a href="#">Gradacac</a> </li>
-                           <li><a href="#">Los Angeles</a> </li>
-                        </ul>
-                     </div>
-                  </div>
-                  <!-- top footer ends -->
-               </div>
-            </footer>
+            
             <!-- end:Footer -->
          </div>
          <!-- end:page wrapper -->
