@@ -126,6 +126,7 @@ session_start();
 								<li><a href="all_menu.php">Semua Menu</a></li>
 								<li><a href="add_menu.php">Tambahkan Menu</a></li>
                                 <li><a href="add_category.php">Tambah Kategori</a></li>
+                                <li><a href="packageCat.php">Tambah Paket</a></li>
                             </ul>
                         </li>
 						 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="hide-menu">Order</span></a>
@@ -158,7 +159,7 @@ session_start();
                        
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">All user Orders</h4>
+                                <h4 class="card-title">Riwayat pesanan</h4>
                              
                                 <div class="table-responsive m-t-40">
                                     <table id="myTable" class="table table-bordered table-striped">
@@ -262,13 +263,6 @@ session_start();
                 <!-- End PAge Content -->
             </div>
             <!-- End Container fluid  -->
-			
-			
-			
-			
-            <!-- footer -->
-            <footer class="footer"> © 2018 All rights reserved. Template designed by <a href="https://colorlib.com">Colorlib</a></footer>
-            <!-- End footer -->
         </div>
         <!-- End Page wrapper  -->
     </div>

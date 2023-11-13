@@ -105,9 +105,6 @@ else{
 										</span>
 					
                 </div>
-            
-			
-			
 				  
             <div class="container m-t-30">
 			<form action="" method="post">
@@ -125,12 +122,9 @@ else{
 										
                                             <table class="table">
 											<tbody>
-                                          
-												 
-											   
                                                     <tr>
                                                         <td>Cart Subtotal</td>
-                                                        <td> <?php echo "$".$item_total; ?></td>
+                                                        <td> <?php echo "Rp. ".$item_total; ?></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Shipping &amp; Handling</td>
@@ -138,13 +132,9 @@ else{
                                                     </tr>
                                                     <tr>
                                                         <td class="text-color"><strong>Total</strong></td>
-                                                        <td class="text-color"><strong> <?php echo "$".$item_total; ?></strong></td>
+                                                        <td class="text-color"><strong> <?php echo "Rp. ".$item_total; ?></strong></td>
                                                     </tr>
                                                 </tbody>
-												
-												
-												
-												
                                             </table>
                                         </div>
                                     </div>

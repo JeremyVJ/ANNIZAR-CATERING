@@ -108,8 +108,6 @@ if(isset($_POST['submit1'] ))
 </head>
 
 <body>
-
-  
 <div class="container">
   <div class="info">
     <h1>Administration </h1><span> login Account</span>

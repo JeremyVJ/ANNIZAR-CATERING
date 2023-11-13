@@ -138,6 +138,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 								<li><a href="all_menu.php">Semua Menu</a></li>
 								<li><a href="add_menu.php">Tambahkan Menu</a></li>
                                 <li><a href="add_category.php">Tambah Kategori</a></li>
+                                <li><a href="packageCat.php">Tambah Paket</a></li>
                             </ul>
                         </li>
 						 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="hide-menu">Order</span></a>
@@ -197,10 +198,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 											<tr>
 												<td><strong>Title:</strong></td>
 												    <td><center><?php echo $rows['title']; ?></center></td>
-													    <td><center>
-													   <a href="javascript:void(0);" onClick="popUpWindow('userprofile.php?newform_id=<?php echo htmlentities($rows['o_id']);?>');" title="Update order">
-
-													   </center></td>
+													
 												   																								
 											</tr>	
 											<tr>
@@ -211,7 +209,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 											</tr>
 											<tr>
 													<td><strong>Price:</strong></td>
-												    <td><center>$<?php echo $rows['price']; ?></center></td>
+												    <td><center>Rp.<?php echo $rows['price']; ?></center></td>
 													   
 												   																							
 											</tr>

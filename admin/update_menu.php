@@ -5,71 +5,42 @@ include("../connection/connect.php");
 error_reporting(0);
 session_start();
 
-
-
-
-if(isset($_POST['submit']))           //if upload btn is pressed
+if(isset($_POST['submit'])) // Jika tombol upload ditekan
 {
-	
-			
-		
-			
-		  
-		
-		
-		if(empty($_POST['d_name'])||empty($_POST['about'])||$_POST['price']==''||$_POST['res_name']=='')
-		{	
-											$error = 	'<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>All fields Must be Fillup!</strong>
-															</div>';
-									
-		
-								
-		}
-	else
-		{
-		
-				$fname = $_FILES['file']['name'];
-								$temp = $_FILES['file']['tmp_name'];
-								$fsize = $_FILES['file']['size'];
-								$extension = explode('.',$fname);
-								$extension = strtolower(end($extension));  
-								$fnew = uniqid().'.'.$extension;
-   
-								$store = "Res_img/dishes/".basename($fnew);                      // the path to store the upload image
-	
-					if($extension == 'jpg'||$extension == 'png'||$extension == 'gif' )
-					{        
-									if($fsize>=1000000)
-										{
-		
-		
-												$error = 	'<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>Max Image Size is 1024kb!</strong> Try different Image.
-															</div>';
-	   
-										}
-		
-									else
-										{
-												$sql = "update dishes set rs_id='$_POST[res_name]',title='$_POST[d_name]',slogan='$_POST[about]',price='$_POST[price]',img='$fnew' where d_id='$_GET[menu_upd]'";  // update the submited data ino the database :images
-												mysqli_query($db, $sql); 
-												move_uploaded_file($temp, $store);
-			  
-													$success = 	'<div class="alert alert-success alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>Record</strong>Updated.
-															</div>';
-                
-	
-										}
-					}
-					              
-	   
-	   
-	   }
+    if (empty($_POST['d_name']) || $_POST['price'] == '' || $_POST['res_name'] == '') {
+        $error = '<div class="alert alert-danger alert-dismissible fade show">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Semua kolom harus diisi!</strong>
+                </div>';
+    } else {
+        $fname = $_FILES['file']['name'];
+        $temp = $_FILES['file']['tmp_name'];
+        $fsize = $_FILES['file']['size'];
+        $extension = explode('.', $fname);
+        $extension = strtolower(end($extension));
+        $fnew = uniqid() . '.' . $extension;
+        $store = "Res_img/dishes/" . basename($fnew); // path untuk menyimpan gambar yang diunggah
+
+        if ($extension == 'jpg' || $extension == 'png' || $extension == 'gif') {
+            if ($fsize >= 10000000) {
+                $error = '<div class="alert alert-danger alert-dismissible fade show">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>Ukuran gambar maksimal adalah 1024kb!</strong> Coba gambar lain.
+                        </div>';
+            } else {
+                $sql = "update dishes set rs_id='$_POST[res_name]', title='$_POST[d_name]', price='$_POST[price]', img='$fnew' where d_id='$_GET[menu_upd]'"; // Memperbarui data yang di-submit ke dalam tabel database "dishes"
+                mysqli_query($db, $sql);
+                move_uploaded_file($temp, $store);
+
+                $success = '<div class="alert alert-success alert-dismissible fade show">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>Rekaman</strong> Diperbarui.
+                        </div>';
+                header('Location: all_menu.php');
+                exit();
+            }
+        }
+    }
 }
 ?>
 <head>
@@ -124,61 +95,6 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                         <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted  " href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
                         <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
                         <!-- Messages -->
-                        <li class="nav-item dropdown mega-dropdown"> <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-th-large"></i></a>
-                            <div class="dropdown-menu animated zoomIn">
-                                <ul class="mega-dropdown-menu row">
-
-
-                                    <li class="col-lg-3  m-b-30">
-                                        <h4 class="m-b-20">CONTACT US</h4>
-                                        <!-- Contact -->
-                                        <form>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="exampleInputname1" placeholder="Enter Name"> </div>
-                                            <div class="form-group">
-                                                <input type="email" class="form-control" placeholder="Enter email"> </div>
-                                            <div class="form-group">
-                                                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Message"></textarea>
-                                            </div>
-                                            <button type="submit" class="btn btn-info">Submit</button>
-                                        </form>
-                                    </li>
-                                    <li class="col-lg-3 col-xlg-3 m-b-30">
-                                        <h4 class="m-b-20">List style</h4>
-                                        <!-- List style -->
-                                        <ul class="list-style-none">
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="col-lg-3 col-xlg-3 m-b-30">
-                                        <h4 class="m-b-20">List style</h4>
-                                        <!-- List style -->
-                                        <ul class="list-style-none">
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="col-lg-3 col-xlg-3 m-b-30">
-                                        <h4 class="m-b-20">List style</h4>
-                                        <!-- List style -->
-                                        <ul class="list-style-none">
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> This Is Another Link</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
                         <!-- End Messages -->
                     </ul>
                     <!-- User profile and search -->
@@ -225,6 +141,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
 								<li><a href="all_menu.php">Semua Menu</a></li>
 								<li><a href="add_menu.php">Tambahkan Menu</a></li>
                                 <li><a href="add_category.php">Tambah Kategori</a></li>
+                                <li><a href="packageCat.php">Tambah Paket</a></li>
                             </ul>
                         </li>
 						 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="hide-menu">Order</span></a>
@@ -259,76 +176,72 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                 <!-- Start Page Content -->
 			<?php  echo $error;
 				echo $success; ?>
-
 					    <div class="col-lg-12">
                         <div class="card card-outline-primary">
-                            <div class="card-header">
+                            <div class="card-header" style="background-color:#f48c06;">
                             <h4 class="m-b-0 text-white">Update Menu Makanan</h4>
 </div>
 <div class="card-body">
-    <form action='' method='post' enctype="multipart/form-data">
-        <div class="form-body">
-            <?php
-            // if (isset($_GET['menu_upd'])) {
-                $menu_upd = $_GET['d_id'];
-                $qml = "SELECT * FROM dishes WHERE d_id = '$menu_upd'";
-                $rest = mysqli_query($db, $qml);
-                $roww = mysqli_fetch_array($rest);
-            // }
-            ?>
-            <hr>
-            <div class="row p-t-20">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label class="control-label">Dish Name</label>
-                        <input type="text" name="d_name" value="<?php echo $roww['title']; ?>" class="form-control" placeholder="Morzirella">
+    <!-- Form action -->
+        <form action='' method='post' enctype="multipart/form-data">
+            <div class="form-body">
+                <?php
+                if (isset($_GET['menu_upd'])) {
+                    $menu_upd = $_GET['menu_upd'];
+                    $sql = "SELECT * FROM dishes WHERE d_id = '$menu_upd'";
+                    $result = mysqli_query($db, $sql);
+                    $row = mysqli_fetch_array($result);
+                }
+                ?>
+                <hr>
+                <div class="row p-t-20">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">Dish Name</label>
+                            <input type="text" name="d_name" value="<?php echo $row['title']; ?>" class="form-control" placeholder="Morzirella">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">Price</label>
+                            <input type="text" name="price" value="<?php echo $row['price']; ?>" class="form-control" placeholder="Rp">
+                        </div>
+                    </div>
+                    <!--  -->
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group has-danger">
+                            <label class="control-label">Image</label>
+                            <input type="file" name="file" id="lastName" value="<?php echo $row['img']; ?>"  class="form-control form-control-danger" placeholder="12n">
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-group has-danger">
-                        <label class="control-label">About</label>
-                        <input type="text" name="about" value="<?php echo $roww['']; ?>" class="form-control form-control-danger" placeholder="slogan">
-                    </div>
-                </div>
-            </div>
-            <div class="row p-t-20">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label class="control-label">Price</label>
-                        <input type="text" name="price" value="<?php echo $roww['price']; ?>" class="form-control" placeholder="Rp">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group has-danger">
-                        <label class="control-label">Image</label>
-                        <input type="file" name="file" id="lastName" class="form-control form-control-danger" placeholder="12n">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label class="control-label">Select Category</label>
-                        <select name="res_name" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
-                            <option>--Select Restaurant--</option>
-                            <?php
-                            $ssql = "SELECT * FROM restaurant";
-                            $res = mysqli_query($db, $ssql);
-                            while ($row = mysqli_fetch_array($res)) {
-                                $selected = ($row['rs_id'] == $roww['res_name']) ? "selected" : "";
-                                echo '<option value="' . $row['rs_id'] . '" ' . $selected . '>' . $row['title'] . '</option>';
-                            }
-                            ?>
-                        </select>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class "control-label">Select Category</label>
+                            <select name="res_name" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
+                                <option>--Pilih Kategori--</option>
+                                <?php
+                                $ssql = "SELECT * FROM restaurant";
+                                $res = mysqli_query($db, $ssql);
+                                while ($restaurant = mysqli_fetch_array($res)) {
+                                    $selected = ($restaurant['rs_id'] == $row['rs_id']) ? "selected" : "";
+                                    echo '<option value="' . $restaurant['rs_id'] . '" ' . $selected . '>' . $restaurant['title'] . '</option>';
+                                }
+                                ?>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="form-actions">
-            <input type="submit" name="submit" class="btn btn-success" value="Update">
-            <a href="all_menu.php" class="btn btn-inverse">Cancel</a>
-        </div>
-    </form>
+            <div class="form-actions">
+                <input type="submit" name="submit" class="btn btn-success" value="Update">
+                <a href="all_menu.php" class="btn btn-inverse">Cancel</a>
+            </div>
+        </form>
+
     </div>
                         </div>
                     </div>

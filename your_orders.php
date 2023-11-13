@@ -170,7 +170,7 @@ only screen and (max-width: 760px),
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                         <ul class="nav navbar-nav">
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
-                            <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span class="sr-only"></span></a> </li>
+                            <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Menu <span class="sr-only"></span></a> </li>
                             
 							<?php
 						if(empty($_SESSION["user_id"]))
@@ -205,10 +205,6 @@ only screen and (max-width: 760px),
             </div>
             <div class="result-show">
                 <div class="container">
-                    <div class="row">
-                       
-                       
-                    </div>
                 </div>
             </div>
             <!-- //results show -->
@@ -216,10 +212,8 @@ only screen and (max-width: 760px),
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12 col-sm-5 col-md-5 col-lg-3">
-                          
-                          
+                            <!--Start Widget-->
                             <div class="widget clearfix">
-                                <!-- /widget heading -->
                                 <div class="widget-heading">
                                     <h3 class="widget-title text-dark">
                                  Popular tags
@@ -228,23 +222,20 @@ only screen and (max-width: 760px),
                                 </div>
                                 <div class="widget-body">
                                     <ul class="tags">
-                                        <li> <a href="#" class="tag">
-                                    Pizza
+                                        <li> <a href="dishes.php?res_id=52" class="tag">
+                                    Paketan
                                     </a> </li>
-                                        <li> <a href="#" class="tag">
-                                    Sendwich
+                                        <li> <a href="dishes.php?res_id=48" class="tag">
+                                    Nasi
                                     </a> </li>
-                                        <li> <a href="#" class="tag">
-                                    Sendwich
+                                        <li> <a href="dishes.php?res_id=49" class="tag">
+                                    Lauk 
                                     </a> </li>
-                                        <li> <a href="#" class="tag">
-                                    Fish 
+                                        <li> <a href="dishes.php?res_id=50" class="tag">
+                                    Penyetan 
                                     </a> </li>
-                                        <li> <a href="#" class="tag">
-                                    Desert
-                                    </a> </li>
-                                        <li> <a href="#" class="tag">
-                                    Salad
+                                        <li> <a href="dishes.php?res_id=51" class="tag">
+                                    Minuman
                                     </a> </li>
                                     </ul>
                                 </div>
@@ -252,19 +243,15 @@ only screen and (max-width: 760px),
                             <!-- end:Widget -->
                         </div>
                         <div class="col-xs-12 col-sm-7 col-md-7 ">
-                            <div class="bg-gray restaurant-entry">
-                                <div class="row">
-								
 							<table >
 						  <thead>
 							<tr>
-							
-							  <th>Item</th>
-							  <th>Quantity</th>
-							  <th>price</th>
-							   <th>status</th>
-							     <th>Date</th>
-								   <th>Action</th>
+							  <th>Pesanan</th>
+							  <th>Jumlah</th>
+							  <th>Harga</th>
+							   <th>Status</th>
+							     <th>Tanggal</th>
+								   <th>Batalkan</th>
 							  
 							</tr>
 						  </thead>

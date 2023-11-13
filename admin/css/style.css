@@ -87,7 +87,7 @@
   outline: none;
 }
 body {
-  background: #fff;
+  background: #000;
   font-family: 'Open Sans', sans-serif;
   margin: 0;
   overflow-x: hidden;
@@ -207,7 +207,7 @@ h6 {
   display: none;
 }
 .page-wrapper {
-  background: #fafafa;
+  background: #ffffff;
   padding-bottom: 60px;
 }
 .container-fluid {
@@ -1528,7 +1528,7 @@ textarea {
   top: 0;
   z-index: 20;
   padding-top: 60px;
-  background: #fff;
+  background: #ffffff;
   -webkit-box-shadow: 1px 0 20px rgba(0, 0, 0, 0.08);
   box-shadow: 1px 0 20px rgba(0, 0, 0, 0.08);
 }
@@ -2111,9 +2111,9 @@ textarea {
   stroke-linejoin: round;
   stroke-linecap: round;
   stroke-dasharray: 500%;
-  stroke-dasharray: 0 /;
+  stroke-dasharray: 0;
   /* fixes IE prob */
-  stroke-dashoffset: 0 /;
+  stroke-dashoffset: 0;
   /* fixes IE prob */
   -webkit-animation: am-draw 40s;
   animation: am-draw 40s;
@@ -6908,6 +6908,7 @@ tbody tr td:last-child {
     left: 0;
   }
 }
+
 /*  10 - media screen and (max-width: 320px)
 ---------------------------------------------------------------------- */
 /*---------------------------------------------------------------*/

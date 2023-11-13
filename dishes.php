@@ -49,8 +49,6 @@ include_once 'product-action.php'; //including controller
 							}
 						else
 							{
-									
-									
 										echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">Keranjang</a> </li>';
 									echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">logout</a> </li>';
 							}
@@ -131,8 +129,6 @@ include_once 'product-action.php'; //including controller
                                     <h3 class="widget-title text-dark">
                                  Your Shopping Cart
                               </h3>
-							  				  
-							  
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="order-row bg-white">
@@ -146,9 +142,7 @@ $item_total = 0;
 foreach ($_SESSION["cart_item"] as $item)  // fetch items define current into session ID
 {
 ?>									
-									
-                                   
-										
+
                                         <div class="form-group row no-gutter">
                                             <div class="col-xs-12">
                                             <div class="title-row">
@@ -188,10 +182,6 @@ $item_total += ($item["price"]*$item["quantity"]); // calculating current price 
                                         <a href="checkout.php?res_id=<?php echo $_GET['res_id'];?>&action=check"  class="btn theme-btn btn-lg">Checkout</a>
                                     </div>
                                 </div>
-								
-						
-								
-								
                             </div>
                     </div>
 

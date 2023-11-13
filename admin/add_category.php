@@ -6,42 +6,30 @@ error_reporting(0);
 session_start();
 
 
-if(isset($_POST['submit'] ))
-{
-    if(empty($_POST['c_name']))
-		{
-			$error = '<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>field Required!</strong>
-															</div>';
-		}
-	else
-	{
-		
-	$check_cat= mysqli_query($db, "SELECT c_name FROM res_category where c_name = '".$_POST['c_name']."' ");
+if (isset($_POST['submit'])) {
+    if (empty($_POST['c_name'])) {
+        $error = '<div class="alert alert-danger alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Field Required!</strong>
+        </div>';
+    } else {
+        $c_name = mysqli_real_escape_string($db, $_POST['c_name']); // Sanitize input
 
-	
-	
-	if(mysqli_num_rows($check_cat) > 0)
-     {
-    	$error = '<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>Category already exist!</strong>
-															</div>';
-     }
-	else{
-       
-	
-	$mql = "INSERT INTO res_category(c_name) VALUES('".$_POST['c_name']."')";
-	mysqli_query($db, $mql);
-			$success = 	'<div class="alert alert-success alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>Congrass!</strong> New Category Added Successfully.</br></div>';
-	
+        $mql = "INSERT INTO res_category (c_name) VALUES ('$c_name')";
+        if (mysqli_query($db, $mql)) {
+            $success = '<div class="alert alert-success alert-dismissible fade show">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Berhasil!</strong> Kategori baru berhasil ditambahkan.</br>
+            </div>';
+        } else {
+            $error = '<div class="alert alert-danger alert-dismissible fade show">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Gagal menambahkan kategori!</strong>
+            </div>';
+        }
     }
-	}
-
 }
+
 
 
 ?>
@@ -96,34 +84,9 @@ if(isset($_POST['submit'] ))
                         <!-- This is  -->
                         <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted  " href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
                         <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
-                     
-                       
                     </ul>
                     <!-- User profile and search -->
                     <ul class="navbar-nav my-lg-0">
-
-                        <!-- Search -->
-                        <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-search"></i></a>
-                            <form class="app-search">
-                                <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
-                        </li>
-                        <!-- Comment -->
-                        <li class="nav-item dropdown">
-                           
-                            <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
-                                <ul>
-                                    <li>
-                                        <div class="drop-title">Notifications</div>
-                                    </li>
-                                    
-                                    <li>
-                                        <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all notifications</strong> <i class="fa fa-angle-right"></i> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <!-- End Comment -->
-                      
                         <!-- Profile -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/5.jpg" alt="user" class="profile-pic" /></a>
@@ -164,6 +127,7 @@ if(isset($_POST['submit'] ))
 								<li><a href="all_menu.php">Semua Menu</a></li>
 								<li><a href="add_menu.php">Tambahkan Menu</a></li>
                                 <li><a href="add_category.php">Tambah Kategori</a></li>
+                                <li><a href="packageCat.php">Tambah Paket</a></li>
                             </ul>
                         </li>
 						 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="hide-menu">Order</span></a>
@@ -184,30 +148,17 @@ if(isset($_POST['submit'] ))
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
                     <h3 class="text-primary">Dashboard</h3> </div>
-               
             </div>
             <!-- End Bread crumb -->
             <!-- Container fluid  -->
             <div class="container-fluid">
                 <!-- Start Page Content -->
-                     
-					
-					
 					  <div class="row">
-                   
-                   
-					
 					 <div class="container-fluid">
                 <!-- Start Page Content -->
-                  
-									
 									<?php  
 									        echo $error;
 									        echo $success; ?>
-									
-									
-								
-								
 					    <div class="col-lg-12">
                         <div class="card card-outline-primary">
                             <div class="card-header">
@@ -218,7 +169,7 @@ if(isset($_POST['submit'] ))
                                     <div class="form-body">
                                        
                                         <hr>
-                                        <div class="row p-t-20">
+                                        <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="control-label">Category</label>
@@ -229,7 +180,7 @@ if(isset($_POST['submit'] ))
                                             
                                     </div>
                                     <div class="form-actions">
-                                        <input type="submit" name="submit" class="btn btn-success" value="save"> 
+                                        <input type="submit" name="submit" class="btn btn-success" value="Save"> 
                                         <a href="dashboard.php" class="btn btn-inverse">Cancel</a>
                                     </div>
                                 </form>
@@ -239,9 +190,7 @@ if(isset($_POST['submit'] ))
 					
                 </div>
 					
-					   <div class="col-12">
-                        
-                       
+					<div class="col-12">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Listed Categories</h4>

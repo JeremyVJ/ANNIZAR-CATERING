@@ -57,18 +57,11 @@ session_start();
                         <!-- This is  -->
                         <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted  " href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
                         <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
-                     
-                       
                     </ul>
                     <!-- User profile and search -->
                     <ul class="navbar-nav my-lg-0">
 
                         <!-- Search -->
-                        <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-search"></i></a>
-                            <form class="app-search">
-                                <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
-                        </li>
-                        <!-- Comment -->
                         <li class="nav-item dropdown">
                            
                             <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
@@ -125,6 +118,7 @@ session_start();
 								<li><a href="all_menu.php">Semua Menu</a></li>
 								<li><a href="add_menu.php">Tambahkan Menu</a></li>
                                 <li><a href="add_category.php">Tambah Kategori</a></li>
+                                <li><a href="packageCat.php">Tambah Paket</a></li>
                             </ul>
                         </li>
 						 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="hide-menu">Order</span></a>
@@ -164,13 +158,13 @@ session_start();
                                         <thead>
                                             <tr>
                                                 <th>Username</th>
-                                                <th>First-Name</th>
-                                                <th>Last-Name</th>
+                                                <th>Nama Awal</th>
+                                                <th>Nama Akhir</th>
                                                 <th>Email</th>
-                                                <th>Phone</th>
-												<th>Address</th>												
-												 <th>Reg-Date</th>
-												  <th>Action</th>
+                                                <th>No. Telp</th>
+												<th>Alamat</th>												
+												 <th>Tgl. Pesan</th>
+												  <th>Edit</th>
 												 
                                             </tr>
                                         </thead>
@@ -227,13 +221,6 @@ session_start();
                 <!-- End PAge Content -->
             </div>
             <!-- End Container fluid  -->
-			
-			
-			
-			
-            <!-- footer -->
-            <footer class="footer"> © 2018 All rights reserved. Template designed by <a href="https://colorlib.com">Colorlib</a></footer>
-            <!-- End footer -->
         </div>
         <!-- End Page wrapper  -->
     </div>

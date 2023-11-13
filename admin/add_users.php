@@ -130,12 +130,6 @@ if(isset($_POST['submit'] ))
                     </ul>
                     <!-- User profile and search -->
                     <ul class="navbar-nav my-lg-0">
-
-                        <!-- Search -->
-                        <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-search"></i></a>
-                            <form class="app-search">
-                                <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
-                        </li>
                         <!-- Comment -->
                         <li class="nav-item dropdown">
                            
@@ -193,6 +187,7 @@ if(isset($_POST['submit'] ))
 								<li><a href="all_menu.php">Semua Menu</a></li>
 								<li><a href="add_menu.php">Tambahkan Menu</a></li>
                                 <li><a href="add_category.php">Tambah Kategori</a></li>
+                                <li><a href="packageCat.php">Tambah Paket</a></li>
                             </ul>
                         </li>
 						 <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="hide-menu">Order</span></a>
@@ -254,7 +249,7 @@ if(isset($_POST['submit'] ))
                                             <!--/span-->
                                         </div>
                                         <!--/row-->
-                                        <div class="row p-t-20">
+                                        <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Last-Name </label>
@@ -287,7 +282,7 @@ if(isset($_POST['submit'] ))
                                                 </div>
                                             </div>
                                             <!--/span-->
-                                            <h3 class="box-title m-t-40"> Address</h3>
+                                            <h3 class="box-title m-t-20"> Address</h3>
                                         <hr>
                                         <div class="row">
                                             <div class="col-md-12 ">
@@ -301,8 +296,8 @@ if(isset($_POST['submit'] ))
                                         </div>
                                     </div>
                                     <div class="form-actions">
-                                        <input type="submit" name="submit" class="btn btn-success" value="save"> 
-                                        <a href="dashboard.php" class="btn btn-inverse">Cancel</a>
+                                        <input type="submit" name="submit" class="btn btn-success" value="Simpan"> 
+                                        <a href="dashboard.php" class="btn btn-inverse">Batal</a>
                                     </div>
                                 </form>
                             </div>
