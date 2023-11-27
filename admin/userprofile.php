@@ -13,8 +13,7 @@ else
   {
 $form_id=$_GET['form_id'];
 $status=$_POST['status'];
-$remark=$_POST['remark'];
-$query=mysqli_query($db,"insert into remark(frm_id,status,remark) values('$form_id','$status','$remark')");
+$query=mysqli_query($db,"insert into status_order(frm_id,status) values('$form_id','$status')");
 $sql=mysqli_query($db,"update users_orders set status='$status' where o_id='$form_id'");
 
 echo "<script>alert('form details updated successfully');</script>";
@@ -49,13 +48,7 @@ window.print();
     <link href="css/helper.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
-    <!--[if lt IE 9]>
-    <script src="https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-<style type="text/css" rel="stylesheet">
+  <style type="text/css" rel="stylesheet">
 
 
 .indent-small {
@@ -94,13 +87,6 @@ label.control-label {
   color: #777;
 }
 
-
-
-
-
-
-
-
 table { 
 	width: 650px; 
 	border-collapse: collapse; 
@@ -125,9 +111,6 @@ td, th {
 	text-align: left; 
 	font-size: 14px;
 	}
-
-
-
 	</style>
 </head>
 
@@ -135,10 +118,6 @@ td, th {
 
 <div style="margin-left:50px;">
  <form name="updateticket" id="updatecomplaint" method="post"> 
- 
- 
- 
- 
 <table  border="0" cellspacing="0" cellpadding="0">
     
 <?php 
@@ -150,15 +129,10 @@ $ret2=mysqli_query($db,"select * FROM users where u_id='".$ro['u_id']."'");
 while($row=mysqli_fetch_array($ret2))
 {
 ?>
-
-    
-  
-		
     <tr>
       <td colspan="2"><b><?php echo $row['f_name'];?>'s profile</b></td>
       
     </tr>
-    
     
     <tr>
       <td  >&nbsp;</td>
@@ -189,14 +163,6 @@ while($row=mysqli_fetch_array($ret2))
       <td><b>User phone:</b></td>
       <td><?php echo htmlentities($row['phone']); ?></td>
     </tr>
-     
-
-
-       
-
-
-
-
 
       
      <tr height="50">

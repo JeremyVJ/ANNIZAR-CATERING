@@ -8,8 +8,7 @@ session_start();
   {
 $form_id=$_GET['form_id'];
 $status=$_POST['status'];
-$remark=$_POST['remark'];
-$query=mysqli_query($db,"insert into remark(frm_id,status,remark) values('$form_id','$status','$remark')");
+$query=mysqli_query($db,"insert into status_order(frm_id,status) values('$form_id','$status')");
 $sql=mysqli_query($db,"update users_orders set status='$status' where o_id='$form_id'");
 
 echo "<script>alert('form details updated successfully');</script>";
@@ -44,12 +43,6 @@ window.print();
     <link href="css/helper.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
-    <!--[if lt IE 9]>
-    <script src="https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
 <style type="text/css" rel="stylesheet">
 
 
@@ -91,11 +84,6 @@ label.control-label {
 
 
 
-
-
-
-
-
 table { 
 	width: 650px; 
 	border-collapse: collapse; 
@@ -130,10 +118,7 @@ td, th {
 
 <div style="margin-left:50px;">
  <form name="updateticket" id="updatecomplaint" method="post"> 
- 
- 
- 
- 
+
 <table  border="0" cellspacing="0" cellpadding="0">
      <tr >
       <td><b>form Number</b></td>
@@ -155,28 +140,12 @@ td, th {
         
       </select></td>
     </tr>
-
-
-      <tr >
-      <td><b>Remark</b></td>
-      <td><textarea name="remark" cols="50" rows="10" required="required"></textarea></td>
-    </tr>
-    
-
-
         <tr>
       <td><b>Action</b></td>
       <td><input type="submit" name="update"  class="btn btn-primary" value="Submit">
 	   
       <input name="Submit2" type="submit"  class="btn btn-danger"  value="Close this window " onClick="return f2();" style="cursor: pointer;"  /></td>
     </tr>
-
-
-
-     
-   
-   
-
  
 </table>
  </form>

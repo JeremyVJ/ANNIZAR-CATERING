@@ -232,18 +232,18 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 																			if($status=="" or $status=="NULL")
 																			{
 																			?>
-																			<td> <center><button type="button" class="btn btn-info" style="font-weight:bold;"><span class="fa fa-bars"  aria-hidden="true" >Dispatch</button></center></td>
+																			<td> <center><button type="button" class="btn btn-info" style="font-weight:bold;"><span class="fa fa-bars"  aria-hidden="true"> Proses</button></center></td>
 																		   <?php 
 																			  }
 																			   if($status=="in process")
 																			 { ?>
-																			<td>   <center><button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin"  aria-hidden="true" ></span>On a Way!</button></center></td> 
+																			<td>   <center><button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin"  aria-hidden="true" ></span> Dalam Pengiriman</button></center></td> 
 																			<?php
 																				}
 																			if($status=="closed")
 																				{
 																			?>
-																			<td>  <center><button type="button" class="btn btn-success" ><span  class="fa fa-check-circle" aria-hidden="true">Delivered</button></center></td> 
+																			<td>  <center><button type="button" class="btn btn-success" ><span  class="fa fa-check-circle" aria-hidden="true"> Pesanan Sampai</button></center></td> 
 																			<?php 
 																			} 
 																			?>
@@ -251,20 +251,13 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 																			if($status=="rejected")
 																				{
 																			?>
-																			<td>  <center><button type="button" class="btn btn-danger"> <i class="fa fa-close"></i>cancelled</button> </center></td> 
+																			<td>  <center><button type="button" class="btn btn-danger"> <i class="fa fa-close"></i> Dibatalkan</button> </center></td> 
 																			<?php 
 																			} 
 																			?>
 													  
 												   																							
 											</tr>
-											
-																				
-																															
-																						
-									
-                                            
-                                           
                                         </tbody>
                                     </table>
                                 </div>
@@ -278,14 +271,6 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
                 </div>
                 <!-- End PAge Content -->
             </div>
-            <!-- End Container fluid  -->
-			
-			
-			
-			
-            <!-- footer -->
-            <footer class="footer"> © 2018 All rights reserved. Template designed by <a href="https://colorlib.com">Colorlib</a></footer>
-            <!-- End footer -->
         </div>
         <!-- End Page wrapper  -->
     </div>

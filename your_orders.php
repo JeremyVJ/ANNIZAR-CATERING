@@ -19,15 +19,16 @@ else
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="#">
-    <title>Starter Template for Bootstrap</title>
+    <link rel="icon" href="images/icon-fix.png">
+    <title>Keranjang</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style1.css" rel="stylesheet">
 <style type="text/css" rel="stylesheet">
 
 
@@ -175,15 +176,15 @@ only screen and (max-width: 760px),
 							<?php
 						if(empty($_SESSION["user_id"]))
 							{
-								echo '<li class="nav-item"><a href="login.php" class="nav-link active">login</a> </li>
-							  <li class="nav-item"><a href="registration.php" class="nav-link active">signup</a> </li>';
+								echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
+							  <li class="nav-item"><a href="registration.php" class="nav-link active">Signup</a> </li>';
 							}
 						else
 							{
 									
 									
-									echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">Keranjang</a> </li>';
-									echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">logout</a> </li>';
+									echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">Pesanan Saya</a> </li>';
+									echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
 							}
 
 						?>
@@ -208,7 +209,7 @@ only screen and (max-width: 760px),
                 </div>
             </div>
             <!-- //results show -->
-            <section class="restaurants-page">
+            <section style="margin-bottom:200px" class="restaurants-page">
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12 col-sm-5 col-md-5 col-lg-3">
@@ -251,7 +252,7 @@ only screen and (max-width: 760px),
 							  <th>Harga</th>
 							   <th>Status</th>
 							     <th>Tanggal</th>
-								   <th>Batalkan</th>
+								   <th>Aksi</th>
 							  
 							</tr>
 						  </thead>
@@ -282,18 +283,18 @@ only screen and (max-width: 760px),
 																			if($status=="" or $status=="NULL")
 																			{
 																			?>
-																			<button type="button" class="btn btn-info" style="font-weight:bold;">Dispatch</button>
+																			<button type="button" class="btn btn-info" style="font-weight:bold;"> Proses</button>
 																		   <?php 
 																			  }
 																			   if($status=="in process")
 																			 { ?>
-																				<button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin"  aria-hidden="true" ></span>On a Way!</button>
+																				<button type="button" class="btn btn-warning"><span class="fa fa-cog fa-spin"  aria-hidden="true" ></span> Dalam Pengiriman</button>
 																			<?php
 																				}
 																			if($status=="closed")
 																				{
 																			?>
-																			 <button type="button" class="btn btn-success" ><span  class="fa fa-check-circle" aria-hidden="true">Delivered</button> 
+																			 <button type="button" class="btn btn-success" ><span  class="fa fa-check-circle" aria-hidden="true"> Pesanan Sampai</button> 
 																			<?php 
 																			} 
 																			?>
@@ -301,7 +302,7 @@ only screen and (max-width: 760px),
 																			if($status=="rejected")
 																				{
 																			?>
-																			 <button type="button" class="btn btn-danger"> <i class="fa fa-close"></i>cancelled</button>
+																			 <button type="button" class="btn btn-danger"> <i class="fa fa-close"></i> Dibatalkan</button>
 																			<?php 
 																			} 
 																			?>
@@ -345,58 +346,34 @@ only screen and (max-width: 760px),
             </section>
             <!-- start: FOOTER -->
             <footer class="footer">
-                <div class="container">
-                    <!-- top footer statrs -->
-                    <div class="row top-footer">
-                        <div class="col-xs-12 col-sm-3 footer-logo-block color-gray">
-                            <a href="#"> <img src="images/food-picky-logo.png" alt="Footer logo"> </a> <span>Order Delivery &amp; Take-Out </span> </div>
-                        <div class="col-xs-12 col-sm-2 about color-gray">
-                            <h5>About Us</h5>
-                            <ul>
-                                <li><a href="#">About us</a> </li>
-                                <li><a href="#">History</a> </li>
-                                <li><a href="#">Our Team</a> </li>
-                                <li><a href="#">We are hiring</a> </li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-12 col-sm-2 how-it-works-links color-gray">
-                            <h5>How it Works</h5>
-                            <ul>
-                                <li><a href="#">Enter your location</a> </li>
-                                <li><a href="#">Choose restaurant</a> </li>
-                                <li><a href="#">Choose meal</a> </li>
-                                <li><a href="#">Pay via credit card</a> </li>
-                                <li><a href="#">Wait for delivery</a> </li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-12 col-sm-2 pages color-gray">
-                            <h5>Pages</h5>
-                            <ul>
-                                <li><a href="#">Search results page</a> </li>
-                                <li><a href="#">User Sing Up Page</a> </li>
-                                <li><a href="#">Pricing page</a> </li>
-                                <li><a href="#">Make order</a> </li>
-                                <li><a href="#">Add to cart</a> </li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-12 col-sm-3 popular-locations color-gray">
-                            <h5>Popular locations</h5>
-                            <ul>
-                                <li><a href="#">Sarajevo</a> </li>
-                                <li><a href="#">Split</a> </li>
-                                <li><a href="#">Tuzla</a> </li>
-                                <li><a href="#">Sibenik</a> </li>
-                                <li><a href="#">Zagreb</a> </li>
-                                <li><a href="#">Brcko</a> </li>
-                                <li><a href="#">Beograd</a> </li>
-                                <li><a href="#">New York</a> </li>
-                                <li><a href="#">Gradacac</a> </li>
-                                <li><a href="#">Los Angeles</a> </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+        <div>
+            <div class="text-center">
+                <img src="images/assets/logocrop.png" style="width:150px" alt="Logo-Footer">
+            </div>
+            <div class="text-center mt-5">
+                <ul style="display:flex;">
+                    <li>
+                        <a href="#"><img src="images/assets/iconwa.png" style="width:50px;" alt="Icon-Wa"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/assets/iconfb.png" style="width:40px;" alt="Icon-Wa"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/assets/iconemail.png" style="width:40px;" alt="Icon-Wa"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/assets/iconig.png" style="width:40px;" alt="Icon-Wa"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="images/assets/iconfb.png" style="width:40px;" alt="Icon-Wa"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="text-center">
+                <p>Copyright &copy; 2023. Developed by Team D3</p>
+            </div>
+        </div>
+    </footer>
             <!-- end:Footer -->
         </div>
   

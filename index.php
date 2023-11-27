@@ -14,20 +14,21 @@ session_start(); //start temp session until logout/browser closed
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="#">
-    <title>Starter Template for Bootstrap</title>
+    <link rel="shortcut icon" href="images/icon-fix.png">
+    <title>Dashboard</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style1.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/font-awesome.min.css" rel="stylesheet" />
     <link href="css/animsition.min.css" rel="stylesheet" />
     <link href="css/animate.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/carousle.css" rel="stylesheet" />
+    <link href="css/style1.css" rel="stylesheet" />
+    <link href="css/carousle1.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
 </head>
 
 <body class="home">
@@ -43,7 +44,7 @@ session_start(); //start temp session until logout/browser closed
         <nav style="background-color:black;">
             <div class="container">
                 <button class="navbar-toggler hidden-lg-up m-b-20" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/DiyoGAY.png" alt="Gambar" style="height:70px; width:90px"> </a>
+                <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/logo-anizzars 1.png" alt="Gambar" style="height:85px; width:170px"> </a>
                 <br>
                 <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                     <ul class="nav navbar-nav">
@@ -54,8 +55,8 @@ session_start(); //start temp session until logout/browser closed
                             echo '<li class="nav-item"><a href="login.php" class="nav-link active" style="color: white;">Login</a> </li>
 							  <li class="nav-item"><a href="registration.php" class="nav-link active" style="color: white;">Sign up</a> </li>';
                         } else {
-                            echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">Keranjang</a> </li>';
-                            echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">logout</a> </li>';
+                            echo  '<li class="nav-item"><a href="your_orders.php" style="color:white;" class="nav-link active">Pesanan Saya</a> </li>';
+                            echo  '<li class="nav-item"><a href="logout.php" style="color:white;" class="nav-link active">Logout</a> </li>';
                         }
                         ?>
                     </ul>
@@ -68,21 +69,21 @@ session_start(); //start temp session until logout/browser closed
 
     <section class="bg-image pb-5" style="height: max-content;">
         <div>
-            <div class="container" style="height : 100px;">
-
+            <div class="container">
             </div>
-            <div class="carousel" style="height: max-content;">
+            <div class="carousel">
                 <ul class="slides">
                     <input type="radio" name="radio-buttons" id="img-1" checked />
                     <li class="slide-container">
                         <div class="slide-image">
-                            <img src="images/bg-register.jpg">
+
+                            <img src="images/promo2.png">
                         </div>
                     </li>
                     <input type="radio" name="radio-buttons" id="img-2" checked />
                     <li class="slide-container">
                         <div class="slide-image">
-                            <img src="images/liwet.jpg">
+                            <img src="images/promo1.png">
                         </div>
                     </li>
                     <input type="radio" name="radio-buttons" id="img-3" checked />
@@ -103,11 +104,11 @@ session_start(); //start temp session until logout/browser closed
     </section>
     <!-- banner part ends -->
     <!-- Popular block starts -->
-    <section class="popular" style="background-color: antiquewhite;">
+    <section class="popular" style="background-color:antiquewhite;">
         <div class="container">
             <div class="title text-xs-center m-b-30">
-                <h2>Popular Dishes of the Month</h2>
-                <p class="lead">The easiest way to your favourite food</p>
+                <h2 style="font-weight:bold; color:black;">Menu Best Seller</h2>
+                <p class="lead" style="color:#FF9A24;">Dengan cita rasa yang autentik dan berani tampil beda</p>
             </div>
             <div class="row">
                 <?php
@@ -123,7 +124,7 @@ session_start(); //start temp session until logout/browser closed
                                         <div class="content">
                                         <h5><a href="dishes.php?res_id=' . $r['rs_id'] . '">' . $r['title'] . '</a></h5>
                                     <div class="product-name">' . $r['slogan'] . '</div>
-                                <div class="price-btn-block"> <span class="price">IDR ' . number_format($price_in_idr) . '</span> <a href="dishes.php?res_id=' . $r['rs_id'] . '" class="btn theme-btn-dash pull-right">Order Now</a> </div>
+                                <div class="price-btn-block"> <span class="price">IDR ' . number_format($price_in_idr) . '</span> <a href="dishes.php?res_id=' . $r['rs_id'] . '" class="btn theme-btn-dash pull-right">Order Sekarang</a> </div>
                             </div>
                         </div>
                     </div>';
@@ -133,24 +134,26 @@ session_start(); //start temp session until logout/browser closed
     </section>
     <!-- Popular block ends -->
     <!-- How it works block starts -->
-    <section class="how-it-works">
+    <section class="how-it-works" style="background-image:url('images/assets/bghome.jpg'); background-size:cover; background-repeat:no-repeat; height:auto;">
         <div class="container">
             <div class="text-xs-center">
-                <h2>MENU</h2>
-                <!-- 3 block sections starts -->
-                <div class="row how-it-works-solution">
-                    <div class="col-xs-12 col-sm-12 col-md-4 how-it-works-steps white-txt col1">
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-4 how-it-works-steps white-txt col2">
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-4 how-it-works-steps white-txt col3">
-                    </div>
+                <h2 style="color:white; font-weight:bold; text-shadow:3px 3px 1px rgba(0,0,0,0.5); padding-top:25px;">Kamu harus tau tentang Catering Annizar!</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-5 offset-sm-1">
+                    <h1 style="color:white; font-size:28px; text-shadow:1px 1px 1px rgba(0,0,0,0.5);">Terbuat dari bahan yang berkualitas</h1>
+                    <p style="font-weight:300; color:white; text-shadow:1px 1px 1px rgba(0,0,0,0.5); font-size:18px;">Semua makanan yang dimasak oleh Catering Annizar pasti selalu fresh sampai ditangan konsumen. Hal ini dikarenakan kami selalu melakukan stok ulang bahan setiap hari. Kadang ada beberapa bahan yang susah dicari, tetapi karena kami sudah mempunyai supplier diberbagai daerah, itu sangat membantu kami dalam hal ini.</p>
+                </div>
+                <div class="col-sm-5">
+                    <h1 style="color:white; font-size:28px; text-shadow:1px 1px 1px rgba(0,0,0,0.5);">Pelayanan yang ramah</h1>
+                    <p style="font-weight:300; color:white; text-shadow:1px 1px 1px rgba(0,0,0,0.5); font-size:18px;">Catering Annizar memberikan pelayanan yang ramah dan sopan kepada setiap pelanggan. Hal ini juga merupakan poin penting dikarenakan menjalin kedekatan antara pelanggan dengan kami.</p>
                 </div>
             </div>
-            <!-- 3 block sections ends -->
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <p class="pay-info">Pay by Cash on delivery</p>
+            <div class="row" style="margin-top:50px;">
+                <div class="col-sm-5 offset-sm-4">
+                    <h1 style="color:white; font-size:28px; text-shadow:1px 1px 1px rgba(0,0,0,0.5);">Cita rasa dan keunikan</h1>
+                    <p style="font-weight:300; color:white; text-shadow:1px 1px 1px rgba(0,0,0,0.5); font-size:18px;">Tidak diragukan lagi jika memasak dengan bahan yang berkualitas, maka akan menghasilkan makanan yang cita rasanya enak. Catering Annizar juga memiliki keunikan yang terletak pada kemasan dan hiasan sebuah makanan dibandingkan dengan catering lainnya.</p>
                 </div>
             </div>
         </div>
@@ -162,7 +165,8 @@ session_start(); //start temp session until logout/browser closed
             <div class="row">
                 <div class="col-sm-4">
                     <div class="title-block pull-left">
-                        <h4>Paket Makanan</h4>
+                        <h4 style="font-weight:bold; font-size:28px;">Kategori Makanan</h4>
+                        <hr style="border-top:1px solid black;">
                     </div>
                 </div>
                 <div class="col-sm-8">
@@ -178,47 +182,11 @@ session_start(); //start temp session until logout/browser closed
                                     echo '<li><a href="#" data-filter=".' . $row['c_name'] . '"> ' . $row['c_name'] . '</a> </li>';
                                 }
                                 ?>
-
                             </ul>
                         </nav>
                     </div>
-                    <!-- restaurants filter nav ends -->
                 </div>
             </div>
-            <!-- restaurants listing starts -->
-
-            <style>
-                .restaurant-wrap {
-                    border: 2px solid transparent;
-                    /* Atur border transparan awal */
-                    transition-timing-function: ease-in;
-                    /* Efek transisi untuk perubahan warna dan border */
-                    transition: transform 0.3s;
-                    /* Mengatur transisi untuk efek animasi */
-                }
-
-                .restaurant-wrap:hover {
-                    color: antiquewhite;
-                    /* Warna teks menjadi oranye saat cursor hover */
-                    border: 2px solid antiquewhite;
-                    /* Border menjadi oranye saat cursor hover */
-                    background-color: antiquewhite;
-                    transform: scale(1.1);
-                    /* Memperbesar elemen saat cursor hover */
-                }
-
-                .restaurant-wrap:active {
-                    background-color: antiquewhite;
-                    /* Warna latar belakang menjadi oranye saat elemen ditekan */
-                }
-
-                .restaurant-wrap:hover .cost,
-                .restaurant-wrap:hover .mins {
-                    display: block;
-                    /* Tampilkan cost dan mins saat cursor hover */
-                }
-            </style>
-
             <div class="row">
                 <div class="restaurant-listing">
                     <?php
@@ -235,6 +203,7 @@ session_start(); //start temp session until logout/browser closed
                         $imageBase64 = 'data:image/jpeg;base64,' . base64_encode($imageData);
 
                         echo '<div class="col-xs-12 col-sm-12 col-md-6 single-restaurant all ' . $rowss['c_name'] . '">
+                        
                 <div class="restaurant-wrap">
                     <div class="row">
                         <div class="col-xs-12 col-sm-3 col-md-12 col-lg-3 text-xs-center">
@@ -247,7 +216,7 @@ session_start(); //start temp session until logout/browser closed
                             <h5><a href="dishes.php?res_id=' . $rows['rs_id'] . '">' . $rows['title'] . '</a></h5>
                             <span>' . $rows['address'] . '</span>
                             <div class="bottom-part">
-                                <div class="cost"><i class="fa fa-check"></i> Min $ 10,00</div>
+                                <div class="cost"><i class="fa fa-check"></i> Mulai Rp6.000</div>
                                 <div class="mins"><i class="fa fa-motorcycle"></i> 30 min</div>
                             </div>
                         </div>
@@ -262,65 +231,77 @@ session_start(); //start temp session until logout/browser closed
                 </div>
             </div>
             <!-- restaurants listing ends -->
-
         </div>
     </section>
+    <style>
+        .restaurant-wrap {
+            border: 2px solid transparent;
+            transition-timing-function: ease-in;
+            transition: transform 0.3s;
+
+        }
+
+        .restaurant-wrap:hover {
+            color: black;
+            border: 2px solid antiquewhite;
+            background-color: antiquewhite;
+            transform: scale(1.1);
+
+        }
+
+        .restaurant-wrap:active {
+            background-color: transparent;
+        }
+
+        .restaurant-wrap:hover .bottom-part {
+            display: block;
+        }
+    </style>
     <!-- start: FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <!-- top footer statrs -->
-            <div class="row top-footer">
-                <div class="col-xs-12 col-sm-3 footer-logo-block color-gray">
-                    <a href="#"> <img src="images/food-picky-logo.png" alt="Footer logo"> </a> <span>Order Delivery &amp; Take-Out </span>
-                </div>
-                <div class="col-xs-12 col-sm-2 about color-gray">
-                    <h5>About Us</h5>
-                    <ul>
-                        <li><a href="#">About us</a> </li>
-                        <li><a href="#">History</a> </li>
-                        <li><a href="#">Our Team</a> </li>
-                        <li><a href="#">We are hiring</a> </li>
-                    </ul>
-                </div>
-                <div class="col-xs-12 col-sm-2 how-it-works-links color-gray">
-                    <h5>How it Works</h5>
-                    <ul>
-                        <li><a href="#">Enter your location</a> </li>
-                        <li><a href="#">Choose restaurant</a> </li>
-                        <li><a href="#">Choose meal</a> </li>
-                        <li><a href="#">Pay via credit card</a> </li>
-                        <li><a href="#">Wait for delivery</a> </li>
-                    </ul>
-                </div>
-                <div class="col-xs-12 col-sm-2 pages color-gray">
-                    <h5>Pages</h5>
-                    <ul>
-                        <li><a href="#">Search results page</a> </li>
-                        <li><a href="#">User Sing Up Page</a> </li>
-                        <li><a href="#">Pricing page</a> </li>
-                        <li><a href="#">Make order</a> </li>
-                        <li><a href="#">Add to cart</a> </li>
-                    </ul>
-                </div>
-                <div class="col-xs-12 col-sm-3 popular-locations color-gray">
-                    <h5>Popular locations</h5>
-                    <ul>
-                        <li><a href="#">Sarajevo</a> </li>
-                        <li><a href="#">Split</a> </li>
-                        <li><a href="#">Tuzla</a> </li>
-                        <li><a href="#">Sibenik</a> </li>
-                        <li><a href="#">Zagreb</a> </li>
-                        <li><a href="#">Brcko</a> </li>
-                        <li><a href="#">Beograd</a> </li>
-                        <li><a href="#">New York</a> </li>
-                        <li><a href="#">Gradacac</a> </li>
-                        <li><a href="#">Los Angeles</a> </li>
-                    </ul>
-                </div>
+    <footer class="footer" style="background-color:#FF6C22; padding: 20px; color:black; text-align: center;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+
+            <!-- Catering Information -->
+            <div style="flex: 1 1 300px; margin: 10px; text-align: left;">
+                <h3>Catering Info</h3>
+                <p>Exquisite catering tailored for you.</p>
+                <p>Contact: <a href="phone:+6281333899025">+62 8132-7899-901</a></p>
             </div>
-            <!-- top footer ends -->
+
+            <!-- Social Media -->
+            <div style="flex: 1 1 150px; margin: 10px;">
+                <h3>Connect With Us</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; justify-content: center;">
+                    <li style="margin: 0 10px;">
+                        <a href="#" style="text-decoration: none;"><img src="images/assets/iconwa.png" style="width: 70px;" alt="Icon-WA"></a>
+                    </li>
+                    <li style="margin: 0 10px;">
+                        <a href="#" style="text-decoration: none;"><img src="images/assets/iconfb.png" style="width: 50px;" alt="Icon-FB"></a>
+                    </li>
+                    <li style="margin: 0 10px;">
+                        <a href="#" style="text-decoration: none;"><img src="images/assets/iconemail.png" style="width: 50px;" alt="Icon-Email"></a>
+                    </li>
+                    <li style="margin: 0 10px;">
+                        <a href="#" style="text-decoration: none;"><img src="images/assets/iconig.png" style="width: 50px;" alt="Icon-IG"></a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Additional Details -->
+            <div style="flex: 1 1 300px; margin: 10px; text-align: right;">
+                <h3>More Information</h3>
+                <p>About Us</p>
+                <p>Contact: <a href="mailto:info@example.com">info@example.com</a></p>
+            </div>
+        </div>
+
+        <!-- Copyright and Logo -->
+        <div style="margin-top: 20px;">
+            <img src="images/assets/logocrop.png" style="width: 120px;" alt="Logo-Footer">
+            <p style="margin-top: 10px;">&copy; 2023. Developed by Team D3</p>
         </div>
     </footer>
+
     <!-- end:Footer -->
 
     <!-- Bootstrap core JavaScript

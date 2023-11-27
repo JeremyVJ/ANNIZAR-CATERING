@@ -1070,7 +1070,7 @@ footer {
   }
 }
 footer {
-  background: url(../images/pattern.png) center;
+  background-color: white;
   padding: 90px 0;
   z-index: 1;
 }
@@ -1091,7 +1091,7 @@ footer,
 footer p,
 footer span {
   font-weight: 300;
-  color: #9c9da5;
+  color: #ffffff;
 }
 .sidebar-title h6,
 .widget-heading .widget-title {
@@ -1118,7 +1118,7 @@ footer ul li {
   margin-bottom: 6px;
 }
 footer ul li a {
-  color: #9c9da5;
+  color: #ffffff;
   transition: all 0.3s;
 }
 .how-it-works-links {

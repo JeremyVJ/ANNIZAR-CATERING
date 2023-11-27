@@ -13,15 +13,16 @@ session_start();
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="#">
-    <title>Starter Template for Bootstrap</title>
+    <link rel="icon" href="images/icon-fix.png">
+    <title>Menu</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style1.css" rel="stylesheet">
 </head>
 
 <body>
@@ -31,7 +32,7 @@ session_start();
         <nav class="navbar navbar-dark">
             <div class="container">
                 <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/food-picky-logo.png" alt=""> </a>
+                <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/assets/logocrop.png" style="width:70px" alt=""> </a>
                 <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                     <ul class="nav navbar-nav">
                         <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
@@ -39,13 +40,13 @@ session_start();
 
                         <?php
                         if (empty($_SESSION["user_id"])) {
-                            echo '<li class="nav-item"><a href="login.php" class="nav-link active">login</a> </li>
-							  <li class="nav-item"><a href="registration.php" class="nav-link active">signup</a> </li>';
+                            echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
+							  <li class="nav-item"><a href="registration.php" class="nav-link active">Signup</a> </li>';
                         } else {
 
 
-                            echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">Keranjang</a> </li>';
-                            echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">logout</a> </li>';
+                            echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">Pesanan Saya</a> </li>';
+                            echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
                         }
 
                         ?>
@@ -61,9 +62,9 @@ session_start();
         <div class="top-links">
             <div class="container">
                 <ul class="row links">
-                    <li class="col-xs-12 col-sm-4 link-item active"><span>1</span><a href="restaurants.php">Pilih Paket Makanan</a></li>
-                    <li class="col-xs-12 col-sm-4 link-item active"><span>2</span><a href="dishes.php">Pilih Paket Makanan</a></li>
-                    <li class="col-xs-12 col-sm-4 link-item"><span>3</span><a href="#">Pesan dan Bayar</a></li>
+                    <li class="col-xs-12 col-sm-4 link-item active"><span>1</span><a href="restaurants.php">Pilih Kategori Makanan</a></li>
+                    <li class="col-xs-12 col-sm-4 link-item"><span>2</span><a href="dishes.php">Pilih Menu</a></li>
+                    <li class="col-xs-12 col-sm-4 link-item"><span>3</span><a href="#">Checkout</a></li>
                 </ul>
             </div>
         </div>
@@ -98,19 +99,19 @@ session_start();
                             </div>
                             <div class="widget-body">
                                 <ul class="tags">
-                                    <li> <a href="#" class="tag">
+                                    <li> <a href="dishes.php?res_id=52" class="tag">
                                             Paketan
                                         </a> </li>
-                                    <li> <a href="#" class="tag">
+                                    <li> <a href="dishes.php?res_id=50" class="tag">
                                             Sambal
                                         </a> </li>
-                                    <li> <a href="#" class="tag">
+                                    <li> <a href="dishes.php?res_id=51" class="tag">
                                             Minuman
                                         </a> </li>
-                                    <li> <a href="#" class="tag">
+                                    <li> <a href="dishes.php?res_id=49" class="tag">
                                             Lauk
                                         </a> </li>
-                                    <li> <a href="#" class="tag">
+                                    <li> <a href="dishes.php?res_id=48" class="tag">
                                             Nasi
                                         </a> </li>
                                 </ul>
@@ -119,27 +120,24 @@ session_start();
                         <!-- end:Widget -->
                     </div>
                     <div class="col-xs-12 col-sm-7 col-md-7 col-lg-9">
-    <div class="bg-gray restaurant-entry">
-        <div class="row">
-            <?php
-            $ress = mysqli_query($db, "select * from restaurant");
-            while ($rows = mysqli_fetch_array($ress)) {
-                // Retrieve the image data from the BLOB field
-                $imageData = $rows['image'];
-                // Convert BLOB data to base64-encoded image
-                $imageBase64 = 'data:image/jpeg;base64,' . base64_encode($imageData);
+                        <div class="bg-gray restaurant-entry">
+                            <div class="row">
+                                <?php
+                                $ress = mysqli_query($db, "select * from restaurant");
+                                while ($rows = mysqli_fetch_array($ress)) {
+                                    // Retrieve the image data from the BLOB field
+                                    $imageData = $rows['image'];
+                                    // Convert BLOB data to base64-encoded image
+                                    $imageBase64 = 'data:image/jpeg;base64,' . base64_encode($imageData);
 
-                echo '<div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
+                                    echo '<div class="col-sm-12 col-md-12 col-lg-8 text-xs-center text-sm-left">
                         <div class="entry-logo">
                             <a class="img-fluid" href="dishes.php?res_id=' . $rows['rs_id'] . '"><img src="' . $imageBase64 . '" alt="Food logo"></a>
                         </div>
                         <!-- end:Logo -->
                         <div class="entry-dscr">
                             <h5><a href="dishes.php?res_id=' . $rows['rs_id'] . '">' . $rows['title'] . '</a></h5> <span>' . $rows['address'] . '</span>
-                            <ul class="list-inline">
-                                <li class="list-inline-item"><i class="fa fa-check"></i> Min $ 10,00</li>
-                                <li class="list-inline-item"><i class="fa fa-motorcycle"></i> 30 min</li>
-                            </ul>
+                            
                         </div>
                         <!-- end:Entry description -->
                     </div>
@@ -148,70 +146,45 @@ session_start();
                         <div class="right-content bg-white">
                             <div class="right-review">
                                 <div class="rating-block"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-o"></i> </div>
-                                <p> 245 Reviews</p> <a href="dishes.php?res_id=' . $rows['rs_id'] . '" class="btn theme-btn-dash">View Menu</a> </div>
+                                <p> 245 Ulasan</p> <a href="dishes.php?res_id=' . $rows['rs_id'] . '" class="btn theme-btn-dash">Lihat Menu</a> </div>
                         </div>
                         <!-- end:right info -->
                     </div>';
-            } ?>
-        </div>
-    </div>
-</div>
+                                } ?>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
         </section>
         <!-- start: FOOTER -->
         <footer class="footer">
-            <div class="container">
-                <!-- top footer statrs -->
-                <div class="row top-footer">
-                    <div class="col-xs-12 col-sm-3 footer-logo-block color-gray">
-                        <a href="#"> <img src="images/food-picky-logo.png" alt="Footer logo"> </a> <span>Order Delivery &amp; Take-Out </span>
-                    </div>
-                    <div class="col-xs-12 col-sm-2 about color-gray">
-                        <h5>About Us</h5>
-                        <ul>
-                            <li><a href="#">About us</a> </li>
-                            <li><a href="#">History</a> </li>
-                            <li><a href="#">Our Team</a> </li>
-                            <li><a href="#">We are hiring</a> </li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-sm-2 how-it-works-links color-gray">
-                        <h5>How it Works</h5>
-                        <ul>
-                            <li><a href="#">Enter your location</a> </li>
-                            <li><a href="#">Choose restaurant</a> </li>
-                            <li><a href="#">Choose meal</a> </li>
-                            <li><a href="#">Pay via credit card</a> </li>
-                            <li><a href="#">Wait for delivery</a> </li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-sm-2 pages color-gray">
-                        <h5>Pages</h5>
-                        <ul>
-                            <li><a href="#">Search results page</a> </li>
-                            <li><a href="#">User Sing Up Page</a> </li>
-                            <li><a href="#">Pricing page</a> </li>
-                            <li><a href="#">Make order</a> </li>
-                            <li><a href="#">Add to cart</a> </li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 popular-locations color-gray">
-                        <h5>Popular locations</h5>
-                        <ul>
-                            <li><a href="#">Sarajevo</a> </li>
-                            <li><a href="#">Split</a> </li>
-                            <li><a href="#">Tuzla</a> </li>
-                            <li><a href="#">Sibenik</a> </li>
-                            <li><a href="#">Zagreb</a> </li>
-                            <li><a href="#">Brcko</a> </li>
-                            <li><a href="#">Beograd</a> </li>
-                            <li><a href="#">New York</a> </li>
-                            <li><a href="#">Gradacac</a> </li>
-                            <li><a href="#">Los Angeles</a> </li>
-                        </ul>
-                    </div>
+            <div>
+                <div class="text-center">
+                    <img src="images/assets/logocrop.png" style="width:150px" alt="Logo-Footer">
+                </div>
+                <div class="text-center mt-5">
+                    <ul style="display:flex;">
+                        <li>
+                            <a href="#"><img src="images/assets/iconwa.png" style="width:50px;" alt="Icon-Wa"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/assets/iconfb.png" style="width:40px;" alt="Icon-Wa"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/assets/iconemail.png" style="width:40px;" alt="Icon-Wa"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/assets/iconig.png" style="width:40px;" alt="Icon-Wa"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="images/assets/iconfb.png" style="width:40px;" alt="Icon-Wa"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <p>Copyright &copy; 2023. Developed by Team D3</p>
                 </div>
             </div>
         </footer>

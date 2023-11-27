@@ -94,7 +94,7 @@ if(isset($_POST['submit'] )) //if submit btn is pressed
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style1.css" rel="stylesheet">
 </head>
 <body>
      
@@ -108,17 +108,16 @@ if(isset($_POST['submit'] )) //if submit btn is pressed
                   <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                      <ul class="nav navbar-nav">
 							<li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
-                            <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span class="sr-only"></span></a> </li>
+                            <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Kategori Makanan <span class="sr-only"></span></a> </li>
                             
 							<?php
 						if(empty($_SESSION["user_id"]))
 							{
-								echo '<li class="nav-item"><a href="login.php" class="nav-link active">login</a> </li>
-							  <li class="nav-item"><a href="registration.php" class="nav-link active">signup</a> </li>';
+								echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
+							  <li class="nav-item"><a href="registration.php" class="nav-link active">Register</a> </li>';
 							}
 						else
 							{
-									
 									
 										echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">your orders</a> </li>';
 									echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">logout</a> </li>';
@@ -132,95 +131,84 @@ if(isset($_POST['submit'] )) //if submit btn is pressed
             </nav>
             <!-- /.navbar -->
          </header>
-         <div class="page-wrapper" style="background-image: url('images/footer_pattern.png'); background-size:cover;padding-left:50px;padding-right:50px;">
-            <div class="breadcrumb" >
-               <div class="container">
-                  
-                  
-                  <div style="display:flex; align-items:center;">
+            <div class="page-wrapper" style="background-image: url('images/footer_pattern.png'); background-size:cover;padding-left:50px;padding-right:50px;">
+               <div class="breadcrumb" >
+                  <div class="container">
                      <div>
-                  <form style="width:100%; padding-right:30px; padding-left:30px;" action="" method="post">
-                  <div class="row">
-								  <div class="form-group col-sm-12">
-                                       <label class="text-white" for="exampleInputEmail1">User-Name</label>
-                                       <input class="form-control border-rad" type="text" name="username" id="example-text-input" placeholder="UserName"> 
-                                    </div>
-                                    <div class="form-group col-sm-6">
-                                       <label class="text-white" for="exampleInputEmail1">Nama Depan</label>
-                                       <input class="form-control border-rad" type="text" name="firstname" id="example-text-input" placeholder="First Name"> 
-                                    </div>
-                                    <div class="form-group col-sm-6">
-                                       <label class="text-white" for="exampleInputEmail1">Nama Belakang</label>
-                                       <input class="form-control border-rad" type="text" name="lastname" id="example-text-input-2" placeholder="Last Name"> 
-                                    </div>
-                                    <div class="form-group col-sm-6">
-                                       <label class="text-white" for="exampleInputEmail1">Email</label>
-                                       <input type="text" class="form-control border-rad" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> 
-                                    </div>
-                                    <div class="form-group col-sm-6">
-                                       <label class="text-white" for="exampleInputEmail1">No. Telepon</label>
-                                       <input class="form-control border-rad" type="text" name="phone" id="example-tel-input-3" placeholder="Phone">  
-                                    </div>
-                                    <div class="form-group col-sm-6">
-                                       <label class="text-white" for="exampleInputPassword1">Password</label>
-                                       <input type="password" class="form-control border-rad" name="password" id="exampleInputPassword1" placeholder="Password"> 
-                                    </div>
-                                    <div class="form-group col-sm-6">
-                                       <label class="text-white" for="exampleInputPassword1">Konfirmasi password</label>
-                                       <input type="password" class="form-control border-rad" name="cpassword" id="exampleInputPassword2" placeholder="Password"> 
-                                    </div>
-                                    <div class="form-group col-sm-12">
-                                       <label class="text-white" for="exampleTextarea">Alamat</label>
-                                       <textarea class="form-control border-rad" id="exampleTextarea"  name="address" rows="3"></textarea>
-                                    </div>
-                                   
-                                 </div>
-                                
-                                 <div class="row">
-                                    <div class="col-sm-4">
-                                       <p> <input type="submit" value="Register" name="submit" class="btn theme-btn border-rad"> </p>
-                                    </div>
-                                    <ul>
-                     <li><a href="#" class="active">
-					  <span style="color:red;text-align:center"><?php echo $message; ?></span>
-					   <span style="color:green;">
-								<?php echo $success; ?>
-										</span>
-					</a></li>
-                  </ul>
-                                 </div>
-                              </form>
+                        <div style=" margin:auto">
+                           <h1 style="color:white; text-align:center; font-size: 24px; margin-top:25px; font-weight:800;text-shadow:1px 1px 1px rgba(0,0,0,0.5);">Disini tempatnya makanan enak!</h1>
+                           <p style="text-align:center; color:white;text-shadow:1px 1px 1px rgba(0,0,0,0.5);">Isi data dirimu dulu ya</p>
+                           <hr>
+                           <img src="images/assets/iconregister.png" style="width:300px; margin-left:50%; transform: translateX(-50%);" alt="">
+                        </div>
+                        <form style="width:85%;margin:auto; padding-right:30px; padding-left:30px;" action="" method="post">
+                           <div class="row">
+                              <div class="form-group col-sm-12">
+                                 <label class="text-white" for="exampleInputEmail1">User-Name</label>
+                                 <input class="form-control border-rad" type="text" name="username" id="example-text-input" placeholder="UserName"> 
                               </div>
-                              <div>
-                                 <h1 style="color:white; text-align:center; font-size: 24px; margin-top:25px; font-weight:800;text-shadow:1px 1px 1px rgba(0,0,0,0.5);">Disini tempatnya makanan enak!</h1>
-                                 <p style="text-align:center; color:white;text-shadow:1px 1px 1px rgba(0,0,0,0.5);">Isi data dirimu dulu ya</p>
-                                 <hr>
-                                 <img src="images/assets/iconregister.png" style="width:300px;" alt="">
+                              <div class="form-group col-sm-6">
+                                 <label class="text-white" for="exampleInputEmail1">Nama Depan</label>
+                                 <input class="form-control border-rad" type="text" name="firstname" id="example-text-input" placeholder="First Name"> 
                               </div>
+                              <div class="form-group col-sm-6">
+                                 <label class="text-white" for="exampleInputEmail1">Nama Belakang</label>
+                                 <input class="form-control border-rad" type="text" name="lastname" id="example-text-input-2" placeholder="Last Name"> 
                               </div>
-                              
-                  
+                              <div class="form-group col-sm-6">
+                                 <label class="text-white" for="exampleInputEmail1">Email</label>
+                                 <input type="text" class="form-control border-rad" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> 
+                              </div>
+                              <div class="form-group col-sm-6">
+                                 <label class="text-white" for="exampleInputEmail1">No. Telepon</label>
+                                 <input class="form-control border-rad" type="text" name="phone" id="example-tel-input-3" placeholder="Phone">  
+                              </div>
+                              <div class="form-group col-sm-6">
+                                 <label class="text-white" for="exampleInputPassword1">Password</label>
+                                 <input type="password" class="form-control border-rad" name="password" id="exampleInputPassword1" placeholder="Password"> 
+                              </div>
+                              <div class="form-group col-sm-6">
+                                 <label class="text-white" for="exampleInputPassword1">Konfirmasi password</label>
+                                 <input type="password" class="form-control border-rad" name="cpassword" id="exampleInputPassword2" placeholder="Password"> 
+                              </div>
+                              <div class="form-group col-sm-12">
+                                 <label class="text-white" for="exampleTextarea">Alamat</label>
+                                 <textarea class="form-control border-rad" id="exampleTextarea"  name="address" rows="3"></textarea>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-sm-4">
+                                 <p> <input type="submit" value="Register" name="submit" class="btn theme-btn border-rad"> </p>
+                              </div>
+                              <ul>
+                                 <li>
+                                    <a href="#" class="active">
+                                       <span style="color:red;text-align:center"><?php echo $message; ?></span>
+                                       <span style="color:green;"><?php echo $success; ?></span>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </form>
+
+                        
+
+                     </div>
+                  </div>
                </div>
             </div>
-            <style>
-    
-</style>
-            
-            
-            <!-- end:Footer -->
-         </div>
          <!-- end:page wrapper -->
-      
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/tether.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/animsition.min.js"></script>
-    <script src="js/bootstrap-slider.min.js"></script>
-    <script src="js/jquery.isotope.min.js"></script>
-    <script src="js/headroom.js"></script>
-    <script src="js/foodpicky.min.js"></script>
+
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/tether.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/animsition.min.js"></script>
+      <script src="js/bootstrap-slider.min.js"></script>
+      <script src="js/jquery.isotope.min.js"></script>
+      <script src="js/headroom.js"></script>
+      <script src="js/foodpicky.min.js"></script>
 </body>
 
 </html>

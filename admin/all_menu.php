@@ -163,25 +163,21 @@ session_start();
                                     <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
-											 <th>Restaurant</th>
-                                                <th>Dish-Name</th>
-                                                
-                                                <th>Price</th>
-                                                <th>Image</th>
+											 <th>Kategori</th>
+                                                <th>Menu</th>
+                                                <th>Harga</th>
+                                                <th>Gambar</th>
                                                <th>Action</th>
-                                               
-												  
                                             </tr>
                                         </thead>
+
                                         <tfoot>
                                             <tr>
-											 <th>Restaurant</th>
-                                                <th>Dish-Name</th>
-                                                
-                                                <th>Price</th>
-                                                <th>Image</th>
+                                            <th>Kategori</th>
+                                                <th>Menu</th>
+                                                <th>Harga</th>
+                                                <th>Gambar</th>
                                                <th>Action</th>
-                                               
                                             </tr>
                                         </tfoot>
                                         <tbody>

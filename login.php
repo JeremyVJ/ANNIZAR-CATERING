@@ -9,11 +9,11 @@
 
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
 <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/login.css">
+<link rel="shortcut icon" href="images/shortcut-logo.png">
 
 	  <style type="text/css">
 	  #buttn{
@@ -23,8 +23,7 @@
 		  border:0;
 		  background-color: #FE9924;
 	  }
-	  </style>
-  
+	  </style> 
 </head>
 
 <body>
@@ -52,11 +51,10 @@ if(isset($_POST['submit']))   // if button is submit
 							    {
                                       	$message = "username atau password salah!"; // throw error
                                 }
-	 }
-	
-	
+	 }	
 }
 ?>
+
 <!-- Form Module-->
 <div class="module form-module">
   <div class="form">

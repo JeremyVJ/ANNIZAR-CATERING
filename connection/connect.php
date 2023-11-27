@@ -4,13 +4,11 @@
 $servername = "localhost"; //server
 $username = "root"; //username
 $password = ""; //password
-$dbname = "online_rest";  //database
+$dbname = "online_rest2";  //database
 
 // Create connection
 $db = mysqli_connect($servername, $username, $password, $dbname); // connecting 
 // Check connection
-if (!$db) {       //checking connection to DB	
+if (!$db) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
-?>

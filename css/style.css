@@ -1391,7 +1391,7 @@ App section
 ============================*/
 
 footer {
-  background: url(../images/pattern.png) center repeat;
+  background-color: white;
   padding: 30px 0;
   z-index: 1;
   position: relative;
@@ -2683,3 +2683,13 @@ a[aria-expanded="false"] .fa-angle-down {
   color: white;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
+
+/* @media (min-width: 897px) and (max-width: 970px) {
+  .map-wrapper {
+    width: 40%;
+    display: inline-block;
+  }
+  #map-result-section {
+    width: 60%;
+  }
+} */
