@@ -1,6 +1,6 @@
 .carousel {
   width: 100%;
-  margin-top: 85px;
+  margin-top: px;
 }
 
 ul.slides {
@@ -36,6 +36,7 @@ ul.slides {
   height: auto; /* Adjusted to maintain aspect ratio */
   top: 0;
   opacity: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
   /* Remove unnecessary transition property */
 }
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <?php
 include("../connection/connect.php");
-error_reporting(0);
+// error_reporting(0);
 session_start();
 
 if (isset($_POST['submit'])) {
@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
 															</div>';
     } else {
 
-        $mql = "update restaurant set title ='$_POST[title]' where title='$_GET[cat_upd]'";
+        $mql = "update res_category set c_name ='$_POST[c_name]' where c_id='$_GET[cat_upd]'";
         mysqli_query($db, $mql);
         $success =     '<div class="alert alert-success alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -156,25 +156,37 @@ if (isset($_POST['submit'])) {
                                     <h4 class="m-b-0 text-white">Update Restaurant Category</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form action='' method='post'>
-                                        <div class="form-body">
-                                            <?php $ssql = "select * from restaurant where rs_id='$_GET[cat_upd]'";
-                                            $res = mysqli_query($db, $ssql);
-                                            $row = mysqli_fetch_array($res); ?>
-                                            <hr>
-                                            <div class="row p-t-20">
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Category</label>
-                                                        <input type="text" name="title" value="<?php echo $row['title'];  ?>" class="form-control" placeholder="Category Name">
-                                                    </div>
+                                    <div class="form-body">
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <form method="post" action="" enctype="multipart/form-data">
+                                                        <?php
+                                                        $ssql = mysqli_query($db, "select * from res_category");
+                                                        $row = mysqli_fetch_array($ssql, MYSQLI_ASSOC);
+                                                        ?>
+
+                                                        <input type="hidden" name="id" value="<?php echo $row['c_id'] ?>">
+                                                        <label for="title">Nama Paket:</label>
+                                                        <input type="text" name="title" id="title" value="<?php echo $row['c_name'] ?>" required><br><br>
+                                                        <label for="category">Pilih Kategori</label>
+                                                        <select name="selected_category" class="form-control" id="category">
+                                                            <option value="">Pilih Kategori</option>
+
+                                                        </select>
+                                                        <br><br>
+                                                        <label for="image">Gambar Paket:</label>
+                                                        <input type="file" name="image" id="image" required><br><br>
+                                                        <div class="form-actions">
+                                                            <input type="submit" name="submit" class="btn btn-success" value="Save">
+                                                            <a href="dashboard.php" class="btn btn-inverse">Cancel</a>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </div>
-                                            <div class="form-actions">
-                                                <input type="submit" name="submit" class="btn btn-success" value="save">
-                                                <a href="packageCat.php" class="btn btn-inverse">Back</a>
-                                            </div>
-                                    </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -748,7 +748,7 @@ hr {
 
 .food-item-wrap:hover h5 > a,
 .food-item-wrap:hover .right-text > a {
-  color: #f30;
+  color: rgb(255, 204, 0);
 }
 
 .food-item-wrap .figure-text {
