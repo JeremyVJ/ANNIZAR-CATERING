@@ -67,6 +67,15 @@ if(isset($_POST['submit']))   // if button is submit
       <input class="border-radius" style="margin-bottom:35px" type="password" placeholder="Password" name="password"/>
       <input class="border-radius button" style="width:50%; margin:auto;" type="submit" id="buttn" name="submit" value="Login" />
 	  <div style="text-align:center; margin-top:20px; margin-bottom:55px">Tidak punya Akun?<a href="registration.php" style="color:#FE9924; font-weight:500; text-decoration:none"> Buat Akun</a></div>
+=======
+    <h2>Login to your account</h2>
+	<span style="color:red;"><?php echo $message; ?></span> 
+   <span style="color:green;"><?php echo $success; ?></span>
+    <form action="" method="post">
+      <input type="text" placeholder="Username"  name="username"/>
+      <input type="password" placeholder="Password" name="password"/>
+     <input type="submit" id="buttn" name="submit" value="login" />
+>>>>>>> 2a1fef1061dc905f92172656aea1b23c5bd4c574
     </form>
   </div>
 </div>
