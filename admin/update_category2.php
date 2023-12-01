@@ -1,26 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php
 include("../connection/connect.php");
-// error_reporting(0);
+error_reporting(0);
 session_start();
 
 if (isset($_POST['submit'])) {
-    if (empty($_POST['title'])) {
+    if (empty($_POST['title']) || empty($_POST['c_id'])) {
         $error = '<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>field Required!</strong>
-															</div>';
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Fields Required!</strong>
+        </div>';
     } else {
+        $title = $_POST['title'];
+        $c_id = $_POST['c_id'];
 
-        $mql = "update res_category set c_name ='$_POST[c_name]' where c_id='$_GET[cat_upd]'";
+        // Handle image upload
+        if ($_FILES['image']['name']) {
+            $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+            $mql = "UPDATE dishes_category SET title='$title', c_id='$c_id', image='$image' WHERE rs_id='$_GET[cat_upd]'";
+        } else {
+            $mql = "UPDATE dishes_category SET title='$title', c_id='$c_id' WHERE rs_id='$_GET[cat_upd]'";
+        }
+
         mysqli_query($db, $mql);
-        $success =     '<div class="alert alert-success alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>Updated!</strong> Successfully.</br></div>';
+
+        $success = '<div class="alert alert-success alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Updated!</strong> Successfully.
+        </div>';
     }
 }
 ?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -36,7 +50,7 @@ if (isset($_POST['submit'])) {
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/helper.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style1.css" rel="stylesheet">
 </head>
 
 
@@ -77,10 +91,10 @@ if (isset($_POST['submit'])) {
                             <!-- End Comment -->
                             <!-- Profile -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/5.jpg" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/jims.jpg" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
-                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
+                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Keluar</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -153,7 +167,7 @@ if (isset($_POST['submit'])) {
                         <div class="col-lg-12">
                             <div class="card card-outline-primary">
                                 <div class="card-header">
-                                    <h4 class="m-b-0 text-white">Update Restaurant Category</h4>
+                                    <h4 class="m-b-0 text-white">Perbaharui Paket Kategori</h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="form-body">
@@ -163,24 +177,34 @@ if (isset($_POST['submit'])) {
                                                 <div class="form-group">
                                                     <form method="post" action="" enctype="multipart/form-data">
                                                         <?php
-                                                        $ssql = mysqli_query($db, "select * from res_category");
-                                                        $row = mysqli_fetch_array($ssql, MYSQLI_ASSOC);
+
+                                                        $category_query = "SELECT c_id, c_name FROM package_category";
+                                                        $category_result = mysqli_query($db, $category_query);
                                                         ?>
+                                                        <div class="form-group">
+                                                            <label for="title">Paket:</label>
+                                                            <input type="text" class="form-control" name="title" value="<?php echo isset($_POST['title']) ? $_POST['title'] : ''; ?>" required>
+                                                        </div>
 
-                                                        <input type="hidden" name="id" value="<?php echo $row['c_id'] ?>">
-                                                        <label for="title">Nama Paket:</label>
-                                                        <input type="text" name="title" id="title" value="<?php echo $row['c_name'] ?>" required><br><br>
-                                                        <label for="category">Pilih Kategori</label>
-                                                        <select name="selected_category" class="form-control" id="category">
-                                                            <option value="">Pilih Kategori</option>
+                                                        <div class="form-group">
+                                                            <label for="c_id">Kategori:</label>
+                                                            <select class="form-control" name="c_id" required>
+                                                                <?php
+                                                                while ($row = mysqli_fetch_assoc($category_result)) {
+                                                                    echo "<option value='{$row['c_id']}'>{$row['c_name']}</option>";
+                                                                }
+                                                                ?>
+                                                            </select>
+                                                        </div>
 
-                                                        </select>
-                                                        <br><br>
-                                                        <label for="image">Gambar Paket:</label>
-                                                        <input type="file" name="image" id="image" required><br><br>
+                                                        <div class="form-group">
+                                                            <label for="image">Foto Produk:</label>
+                                                            <input type="file" class="form-control" name="image">
+                                                        </div>
+
                                                         <div class="form-actions">
-                                                            <input type="submit" name="submit" class="btn btn-success" value="Save">
-                                                            <a href="dashboard.php" class="btn btn-inverse">Cancel</a>
+                                                            <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                                                            <a href="packageCat.php" class="btn btn-inverse">Kembali</a>
                                                         </div>
                                                     </form>
                                                 </div>

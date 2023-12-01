@@ -129,12 +129,7 @@ if (isset($_POST['submit1'])) {
 			</div>
 		</div>
 	</div>
-
-
-
 	<script src="js/login.js"></script>
-
-
 	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 	<script src='js/index.js'></script>
 </body>

@@ -14,51 +14,46 @@ session_start(); //start temp session until logout/browser closed
     <!-- The above 3 meta tags must come first in the head; any other head content must come after these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="#">
+    <link rel="icon" type="image/png" href="images/assets/logo-icon.png">
     <title>Starter Template for Bootstrap</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-" crossorigin="anonymous" />
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style1.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/style-fix.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/font-awesome.min.css" rel="stylesheet" />
     <link href="css/animsition.min.css" rel="stylesheet" />
     <link href="css/animate.css" rel="stylesheet" />
-    <link href="css/style1.css" rel="stylesheet" />
+    <link href="css/style-fix.css" rel="stylesheet" />
     <link href="css/carousle.css" rel="stylesheet" />
-    <link href="css/index.css" rel="stylesheet" />
 </head>
 
 <body class="home">
-
-
-    <style>
-
-    </style>
-
     <!--header starts-->
     <header id="header" class="header-scroll top-header">
         <!-- .navbar -->
-        <nav style="background-color:black;">
+        <nav style="background-color:#f6f6f6;">
             <div class="container">
                 <button class="navbar-toggler hidden-lg-up m-b-20" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/logo-anizzars 1.png" alt="Gambar" style="height:70px; width:90px"> </a>
+                <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/assets/logo-footer.png" alt="Gambar" style="height:70px; width:90px; "> </a>
                 <br>
                 <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item"> <a class="nav-link active" href="index.php" style="color: white;">Home <span class="sr-only">(current)</span></a> </li>
-                        <li class="nav-item"> <a class="nav-link active" href="restaurants.php" style="color: white;">Kategori Makanan <span class="sr-only"></span></a> </li>
+                        <li class="nav-item"> <a class="nav-link active" href="index.php" style="color: #333; font-weight:400;">Home <span class="sr-only">(current)</span></a> </li>
+                        <li class="nav-item"> <a class="nav-link active" href="restaurants.php" style="color: #333; font-weight:400;">Menu <span class="sr-only"></span></a> </li>
                         <?php
                         if (empty($_SESSION["user_id"])) {
-                            echo '<li class="nav-item"><a href="login.php" class="nav-link active" style="color: white;">Login</a> </li>
-							  <li class="nav-item"><a href="registration.php" class="nav-link active" style="color: white;">Sign up</a> </li>';
+                            echo '<li class="nav-item"><a href="login.php" class="nav-link active" style="color: #333; font-weight:400;">Login</a> </li>
+							  <li class="nav-item"><a href="registration.php" class="nav-link active" style="color: #333; font-weight:400;">Sign up</a> </li>';
                         } else {
-                            echo  '<li class="nav-item"><a href="your_orders.php" style="color:white;" class="nav-link active">Pesanan Saya</a> </li>';
-                            echo  '<li class="nav-item"><a href="logout.php" style="color:white;" class="nav-link active">Logout</a> </li>';
+                            echo  '<li class="nav-item"><a href="your_orders.php" style="color:black;" class="nav-link active">Pesanan Saya</a> </li>';
+                            echo  '<li class="nav-item"><a href="logout.php" style="color:black;" class="nav-link active">Logout</a> </li>';
                         }
-                        ?> 
+                        ?>
                     </ul>
                 </div>
             </div>
@@ -67,28 +62,28 @@ session_start(); //start temp session until logout/browser closed
     </header>
     <!-- banner part starts -->
 
-    <section class="bg-image pb-5" style="height: max-content;">
-        <div>
-            <div class="container" style="height : 78px;">
-            </div>
+    <section class="bg-image pb-5" style="height: 100vh;">
+        <div style="background-color:black;">
             <div class="carousel">
-                <ul class="slides">
+                <ul class="slides" style="height: 100vh;">
                     <input type="radio" name="radio-buttons" id="img-1" checked />
                     <li class="slide-container">
                         <div class="slide-image">
-                            <img src="images/bg-register.jpg">
+                            <img class="img-custom" src="images/promo3.png">
                         </div>
                     </li>
+
                     <input type="radio" name="radio-buttons" id="img-2" checked />
                     <li class="slide-container">
                         <div class="slide-image">
-                            <img src="images/promo2.png">
+                            <img class="img-custom" src="images/promo1 (3).png">
                         </div>
                     </li>
+
                     <input type="radio" name="radio-buttons" id="img-3" checked />
                     <li class="slide-container">
                         <div class="slide-image">
-                            <img src="images/promo2.png">
+                            <img class="img-custom" src="images/promo2.png">
                         </div>
                     </li>
 
@@ -98,16 +93,17 @@ session_start(); //start temp session until logout/browser closed
                         <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
                     </div>
                 </ul>
+
             </div>
         </div>
     </section>
     <!-- banner part ends -->
     <!-- Popular block starts -->
-    <section class="popular" style="background-color: white;">
+    <section class="popular" style="background-color:#f4f4ef;">
         <div class="container">
             <div class="title text-xs-center m-b-30">
-                <h2 style="font-weight:bold; color:black;">Menu Best Seller</h2>
-                <p class="lead" style="color:#FF9A24;">Dengan cita rasa yang autentik dan berani tampil beda</p>
+                <p style="font-weight:bold; color:black; font-size:70px;">Menu <span class="best-seller" style="color:#a3816a;">Best Seller</span></p>
+                <p class="lead" style="color:black; font-family: 'Plus Jakarta Sans', sans-serif;">Cita Rasa Autentik dan Kualitas Bahan yang Segar!</p>
             </div>
             <div class="row">
                 <?php
@@ -150,7 +146,7 @@ session_start(); //start temp session until logout/browser closed
                 </div>
             </div>
             <div class="row" style="margin-top:50px;">
-            <div class="col-sm-5 offset-sm-4">
+                <div class="col-sm-5 offset-sm-4">
                     <h1 style="color:white; font-size:28px; text-shadow:1px 1px 1px rgba(0,0,0,0.5);">Cita rasa dan keunikan</h1>
                     <p style="font-weight:300; color:white; text-shadow:1px 1px 1px rgba(0,0,0,0.5); font-size:18px;">Tidak diragukan lagi jika memasak dengan bahan yang berkualitas, maka akan menghasilkan makanan yang cita rasanya enak. Catering Annizar juga memiliki keunikan yang terletak pada kemasan dan hiasan sebuah makanan dibandingkan dengan catering lainnya.</p>
                 </div>
@@ -159,7 +155,7 @@ session_start(); //start temp session until logout/browser closed
     </section>
     <!-- How it works block ends -->
     <!-- Featured restaurants starts -->
-    <section class="featured-restaurants">
+    <section class="featured-restaurants" style="background-color:#f4f4ef;">
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
@@ -176,7 +172,7 @@ session_start(); //start temp session until logout/browser closed
                                 <li><a href="#" class="selected" data-filter="*">all</a> </li>
                                 <?php
                                 // display categories here
-                                $res = mysqli_query($db, "select * from res_category");
+                                $res = mysqli_query($db, "select * from package_category");
                                 while ($row = mysqli_fetch_array($res)) {
                                     echo '<li><a href="#" data-filter=".' . $row['c_name'] . '"> ' . $row['c_name'] . '</a> </li>';
                                 }
@@ -190,46 +186,14 @@ session_start(); //start temp session until logout/browser closed
             </div>
             <!-- restaurants listing starts -->
 
-            <style>
-                .restaurant-wrap {
-                    border: 2px solid transparent;
-                    /* Atur border transparan awal */
-                    transition-timing-function: ease-in;
-                    /* Efek transisi untuk perubahan warna dan border */
-                    transition: transform 0.3s;
-                    /* Mengatur transisi untuk efek animasi */
-                }
-
-                .restaurant-wrap:hover {
-                    color: antiquewhite;
-                    /* Warna teks menjadi oranye saat cursor hover */
-                    border: 2px solid antiquewhite;
-                    /* Border menjadi oranye saat cursor hover */
-                    background-color: antiquewhite;
-                    transform: scale(1.1);
-                    /* Memperbesar elemen saat cursor hover */
-                }
-
-                .restaurant-wrap:active {
-                    background-color: antiquewhite;
-                    /* Warna latar belakang menjadi oranye saat elemen ditekan */
-                }
-
-                .restaurant-wrap:hover .cost,
-                .restaurant-wrap:hover .mins {
-                    display: block;
-                    /* Tampilkan cost dan mins saat cursor hover */
-                }
-            </style>
-
             <div class="row">
                 <div class="restaurant-listing">
                     <?php
                     // Fetching records from the restaurant table
-                    $ress = mysqli_query($db, "select * from restaurant");
+                    $ress = mysqli_query($db, "select * from dishes_category");
                     while ($rows = mysqli_fetch_array($ress)) {
                         // Fetch records from res_category table according to the category ID
-                        $query = mysqli_query($db, "select * from res_category where c_id='" . $rows['c_id'] . "'");
+                        $query = mysqli_query($db, "select * from package_category where c_id='" . $rows['c_id'] . "'");
                         $rowss = mysqli_fetch_array($query);
 
                         // Retrieve the image data from the BLOB field
@@ -238,11 +202,12 @@ session_start(); //start temp session until logout/browser closed
                         $imageBase64 = 'data:image/jpeg;base64,' . base64_encode($imageData);
 
                         echo '<div class="col-xs-12 col-sm-12 col-md-6 single-restaurant all ' . $rowss['c_name'] . '">
-                <div class="restaurant-wrap">
-                    <div class="row">
+                    
+                    <div class="restaurant-wrap">
+                        <div class="row">
                         <div class="col-xs-12 col-sm-3 col-md-12 col-lg-3 text-xs-center">
                             <a class="restaurant-logo" href="dishes.php?res_id=' . $rows['rs_id'] . '">
-                                <img src="' . $imageBase64 . '" alt="Restaurant logo">
+                                <img src="' . $imageBase64 . '" alt="Restaurant logo" style="width: 100px; height:60px">
                             </a>
                         </div>
                         <!--end:col -->
@@ -269,32 +234,53 @@ session_start(); //start temp session until logout/browser closed
         </div>
     </section>
     <!-- start: FOOTER -->
-    <footer class="footer">
-        <div>
-            <div class="text-center">
-                <img src="images/assets/logocrop.png" style="width:150px" alt="Logo-Footer">
+    <footer style="background-color:#fffff0; padding-top:70px; padding-bottom:70px">
+        <div class="container" style="display:grid; grid-template-columns: 1fr 1fr 1fr 1fr">
+            <div>
+                <img src="images/assets/logo-footer.png" alt="Logo Footer" width="250px">
             </div>
-            <div class="text-center mt-5">
-                <ul style="display:flex;">
-                    <li>
-                        <a href="#"><img src="images/assets/iconwa.png" style="width:50px;" alt="Icon-Wa"></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="images/assets/iconfb.png" style="width:40px;" alt="Icon-Wa"></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="images/assets/iconemail.png" style="width:40px;" alt="Icon-Wa"></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="images/assets/iconig.png" style="width:40px;" alt="Icon-Wa"></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="images/assets/iconfb.png" style="width:40px;" alt="Icon-Wa"></a>
-                    </li>
-                </ul>
+            <div class="tentang">
+                <h2 style="font-size:20px; margin-bottom:50px; color: #a3816a; font-weight:600; letter-spacing:1.5px; text-transform: uppercase;">Tentang Kami</h2>
+                <div>
+                    <i class="fa-solid fa-star" style="float: left; margin-right: 5px;"></i>
+                    <p style="display: inline;">Katering harian 3-4 Porsi</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-star" style="float: left; margin-right: 5px;"></i>
+                    <p style="display: inline;">Free ongkir area Jember Kota</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-star" style="float: left; margin-right: 5px;"></i>
+                    <p style="display: inline;">Pesan 1 hari bisa</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-star" style="float: left; margin-right: 5px;"></i>
+                    <p style="display: inline;">Melayani pemesanan nasi kotak, tumpeng & aneka kue</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-star" style="float: left; margin-right: 5px;"></i>
+                    <p style="display: inline;">Melayani pemesanan nasi kotak, tumpeng & aneka kue</p>
+                </div>
             </div>
-            <div class="text-center">
-                <p>Copyright &copy; 2023. Developed by Team D3</p>
+            <div class="kontak">
+                <h2 style="font-size:20px; margin-bottom:50px; color: #a3816a; font-weight:600; letter-spacing:1.5px; text-transform: uppercase;">Hubungi Kami</h2>
+                <div>
+                    <i class="fa-solid fa-house" style="float: left; margin-right: 5px;"></i>
+                    <p style="display: inline;">Jl. Gunung Lor Surabaya</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-envelope" style="float: left; margin-right: 5px;"></i>
+                    <p style="display: inline;">cb57catering2@gmail.com</p>
+                </div>
+                <div>
+                    <i class="fa-brands fa-whatsapp" style="float: left; margin-right: 5px;"></i>
+                    <p style="display: inline;">081234567890</p>
+                </div>
+            </div>
+            <div class="jam">
+                <h2 style="font-size:20px; margin-bottom:50px; color: #a3816a; font-weight:600; letter-spacing:1.5px; text-transform: uppercase;">Jam Operasional Kami</h2>
+                <p style="display:inline">Senin - Sabtu : 08.00 -16.00</p>
+                <p>Minggu & Hari Besar : Tutup</p>
             </div>
         </div>
     </footer>

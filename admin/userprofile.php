@@ -46,7 +46,7 @@ window.print();
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/helper.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style1.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <style type="text/css" rel="stylesheet">
 

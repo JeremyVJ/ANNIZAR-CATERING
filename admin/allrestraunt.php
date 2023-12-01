@@ -20,7 +20,7 @@ session_start();
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/helper.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style1.css" rel="stylesheet">
 </head>
 
 <body class="fix-header fix-sidebar">
@@ -207,7 +207,7 @@ session_start();
 										
                                            
                                                	<?php
-												$sql="SELECT * FROM restaurant order by rs_id desc";
+												$sql="SELECT * FROM dishes_category order by rs_id desc";
 												$query=mysqli_query($db,$sql);
 												
 													if(!mysqli_num_rows($query) > 0 )
@@ -219,7 +219,7 @@ session_start();
 																	while($rows=mysqli_fetch_array($query))
 																		{
 																					
-																				$mql="SELECT * FROM res_category where c_id='".$rows['c_id']."'";
+																				$mql="SELECT * FROM package_category where c_id='".$rows['c_id']."'";
 																					$res=mysqli_query($db,$mql);
 																					$row=mysqli_fetch_array($res);
 																				

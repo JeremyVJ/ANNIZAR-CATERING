@@ -86,7 +86,7 @@ if(isset($_POST['submit'] )) //if submit btn is pressed
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="#">
+    <link rel="icon" href="images/assets/logo-icon.png">
     <title>Starter Template for Bootstrap</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -94,7 +94,7 @@ if(isset($_POST['submit'] )) //if submit btn is pressed
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/style1.css" rel="stylesheet">
+    <link href="css/style-fix.css" rel="stylesheet">
 </head>
 <body>
      

@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
     // Mengunggah gambar paket
     $image = file_get_contents($_FILES['image']['tmp_name']);
 
-    $insert_query = "INSERT INTO restaurant (title, c_id, image) VALUES (?, ?, ?)";
+    $insert_query = "INSERT INTO dishes_category (title, c_id, image) VALUES (?, ?, ?)";
     
     $stmt = mysqli_prepare($db, $insert_query);
     mysqli_stmt_bind_param($stmt, 'sis', $title, $category, $image);

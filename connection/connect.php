@@ -4,7 +4,7 @@
 $servername = "localhost"; //server
 $username = "root"; //username
 $password = ""; //password
-$dbname = "online_rest2";  //database
+$dbname = "anizzar_catering";  //database
 
 // Create connection
 $db = mysqli_connect($servername, $username, $password, $dbname); // connecting 

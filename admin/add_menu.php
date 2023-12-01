@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
                                 <strong>Max image size is 1024kb!</strong> Try a different image.
                             </div>';
             } else {
-                $db = mysqli_connect("localhost", "root", "", "online_rest2");
+                $db = mysqli_connect("localhost", "root", "", "anizzar_catering");
 
                 $stmt = $db->prepare("INSERT INTO dishes(rs_id, title, price, img) VALUES (?, ?, ?, ?)");
                 $stmt->bind_param("ssss", $_POST['res_name'], $_POST['title'], $_POST['price'], $fnew);
@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
     }
 }
 
-$restaurantQuery = "SELECT rs_id, title FROM restaurant";
+$restaurantQuery = "SELECT rs_id, title FROM dishes_category";
 $restaurantResult = mysqli_query($db, $restaurantQuery);
 
 // Check for query success
@@ -80,7 +80,7 @@ if ($restaurantResult) {
     <title>Ela - Bootstrap Admin Dashboard Template</title>
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/helper.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style1.css" rel="stylesheet">
 </head>
 
 <body class="fix-header">
@@ -134,10 +134,10 @@ if ($restaurantResult) {
 
                         <!-- Profile -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/5.jpg" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/jims.jpg" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
-                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
+                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Keluar</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -221,9 +221,9 @@ if ($restaurantResult) {
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="control-label">Restaurant Name</label>
+                                                <label class="control-label">Paket Makanan</label>
                                                 <select name="res_name" class="form-control">
-                                                    <option value="">Select Restaurant</option>
+                                                    <option value="">Pilih Paket</option>
                                                     <?php
                                                     // Loop through the restaurants and create options
                                                     foreach ($restaurants as $restaurant) {
@@ -239,13 +239,13 @@ if ($restaurantResult) {
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="control-label">Price</label>
-                                                <input type="text" name="price" class="form-control" placeholder="Rp">
+                                                <label class="control-label">Harga</label>
+                                                <input type="text" name="price" class="form-control" placeholder="Rp.9000">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group has-danger">
-                                                <label class="control-label">Image</label>
+                                                <label class="control-label">Foto Produk</label>
                                                 <input type="file" name="file" id="lastName" class="form-control form-control-danger" placeholder="12n">
                                             </div>
                                         </div>
@@ -254,8 +254,8 @@ if ($restaurantResult) {
                                 </div>
                         </div>
                         <div class="form-actions">
-                            <input type="submit" name="submit" class="btn btn-success" value="save">
-                            <a href="dashboard.php" class="btn btn-inverse">Cancel</a>
+                            <input type="submit" name="submit" class="btn btn-success" value="Simpan">
+                            <a href="add_menu.php" class="btn btn-inverse">Batal</a>
                         </div>
                         </form>
                     </div>

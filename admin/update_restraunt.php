@@ -58,7 +58,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
 												
 												$res_name=$_POST['res_name'];
 				                                 
-												$sql = "update restaurant set c_id='$_POST[c_name]', title='$res_name',email='$_POST[email]',phone='$_POST[phone]',url='$_POST[url]',o_hr='$_POST[o_hr]',c_hr='$_POST[c_hr]',o_days='$_POST[o_days]',address='$_POST[address]',image='$fnew' where rs_id='$_GET[res_upd]' ";  // store the submited data ino the database :images												mysqli_query($db, $sql); 
+												$sql = "update dishes_category set c_id='$_POST[c_name]', title='$res_name',email='$_POST[email]',phone='$_POST[phone]',url='$_POST[url]',o_hr='$_POST[o_hr]',c_hr='$_POST[c_hr]',o_days='$_POST[o_days]',address='$_POST[address]',image='$fnew' where rs_id='$_GET[res_upd]' ";  // store the submited data ino the database :images												mysqli_query($db, $sql); 
 													mysqli_query($db, $sql); 
 												move_uploaded_file($temp, $store);
 			  
@@ -120,7 +120,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/helper.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style1.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
     <!--[if lt IE 9]>
@@ -422,7 +422,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                             <div class="card-body">
                                 <form action='' method='post'  enctype="multipart/form-data">
                                     <div class="form-body">
-                                       <?php $ssql ="select * from restaurant where rs_id='$_GET[res_upd]'";
+                                       <?php $ssql ="select * from dishes_category where rs_id='$_GET[res_upd]'";
 													$res=mysqli_query($db, $ssql); 
 													$row=mysqli_fetch_array($res);?>
                                         <hr>
@@ -520,7 +520,7 @@ if(isset($_POST['submit']))           //if upload btn is pressed
                                                     <label class="control-label">Select Category</label>
 													<select name="c_name" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
                                                         <option>--Select Category--</option>
-                                                 <?php $ssql ="select * from res_category";
+                                                 <?php $ssql ="select * from package_category";
 													$res=mysqli_query($db, $ssql); 
 													while($rows=mysqli_fetch_array($res))  
 													{

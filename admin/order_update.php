@@ -41,7 +41,7 @@ window.print();
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/helper.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style1.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style type="text/css" rel="stylesheet">
 
@@ -121,27 +121,21 @@ td, th {
 
 <table  border="0" cellspacing="0" cellpadding="0">
      <tr >
-      <td><b>form Number</b></td>
+      <td><b>No. Pesanan</b></td>
       <td><?php echo htmlentities($_GET['form_id']); ?></td>
     </tr>
-	<tr>
-      <td  >&nbsp;</td>
-
-      <td >&nbsp;</td>
-    </tr>
-   
-    <tr >
+      <tr >
       <td><b>Status</b></td>
       <td><select name="status" required="required" >
-      <option value="">Select Status</option>
-      <option value="in process">In Process</option>
-    <option value="closed">Closed</option>
-	 <option value="rejected">rejected</option>
+      <option value="">Pilih Status</option>
+      <option value="in process">Proses</option>
+    <option value="closed">Selesai</option>
+	 <option value="rejected">Dibatalkan</option>
         
       </select></td>
     </tr>
         <tr>
-      <td><b>Action</b></td>
+      <td><b>Aksi</b></td>
       <td><input type="submit" name="update"  class="btn btn-primary" value="Submit">
 	   
       <input name="Submit2" type="submit"  class="btn btn-danger"  value="Close this window " onClick="return f2();" style="cursor: pointer;"  /></td>

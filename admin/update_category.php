@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
 															</div>';
     } else {
 
-        $mql = "update res_category set c_name ='$_POST[c_name]' where c_id='$_GET[cat_upd]'";
+        $mql = "update package_category set c_name ='$_POST[c_name]' where c_id='$_GET[cat_upd]'";
         mysqli_query($db, $mql);
         $success =     '<div class="alert alert-success alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/helper.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style1.css" rel="stylesheet">
 </head>
 
 
@@ -78,10 +78,10 @@ if (isset($_POST['submit'])) {
                             <!-- End Comment -->
                             <!-- Profile -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/5.jpg" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/jims.jpg" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
-                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
+                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Keluar</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -154,26 +154,26 @@ if (isset($_POST['submit'])) {
                         <div class="col-lg-12">
                             <div class="card card-outline-primary">
                                 <div class="card-header">
-                                    <h4 class="m-b-0 text-white">Update Restaurant Category</h4>
+                                    <h4 class="m-b-0 text-white">Perbaharui Kategori</h4>
                                 </div>
                                 <div class="card-body">
                                     <form action='' method='post'>
                                         <div class="form-body">
-                                            <?php $ssql = "select * from res_category where c_id='$_GET[cat_upd]'";
+                                            <?php $ssql = "select * from package_category where c_id='$_GET[cat_upd]'";
                                             $res = mysqli_query($db, $ssql);
                                             $row = mysqli_fetch_array($res); ?>
                                             <hr>
                                             <div class="row p-t-20">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label class="control-label">Category</label>
-                                                        <input type="text" name="c_name" value="<?php echo $row['c_name'];  ?>" class="form-control" placeholder="Category Name">
+                                                        <label class="control-label">Kategori</label>
+                                                        <input type="text" name="c_name" value="<?php echo $row['c_name'];  ?>" class="form-control" placeholder="Paket Hemat">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-actions">
-                                                <input type="submit" name="submit" class="btn btn-success" value="save">
-                                                <a href="add_category.php" class="btn btn-inverse">Back</a>
+                                                <input type="submit" name="submit" class="btn btn-success" value="Simpan">
+                                                <a href="add_category.php" class="btn btn-inverse">Kembali</a>
                                             </div>
                                     </form>
                                 </div>

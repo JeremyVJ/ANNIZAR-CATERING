@@ -1,32 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include("connection/connect.php"); // connection to db
+include("connection/connect.php");
 error_reporting(0);
 session_start();
-
-include_once 'product-action.php'; //including controller
-
-?>
-
+include_once 'product-action.php'; ?>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="images/icon-fix.png">
+    <link rel="icon" href="images/assets/logo-icon.png">
     <title>Menu Makanan</title>
-    <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animsition.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="css/style1.css" rel="stylesheet">
+    <link href="css/style-fix.css" rel="stylesheet">
 </head>
 
 <body>
@@ -34,31 +27,30 @@ include_once 'product-action.php'; //including controller
     <!--header starts-->
     <header id="header" class="header-scroll top-header headrom">
         <!-- .navbar -->
-        <nav class="navbar navbar-dark">
+        <nav style="background-color:#fffff0;">
             <div class="container">
-                <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                <a class="navbar-brand" href="index.html"> <img class="img-rounded" src="images/assets/logocrop.png" style="width:70px" alt=""> </a>
+                <button class="navbar-toggler hidden-lg-up m-b-20" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
+                <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/assets/logo-footer.png" alt="Gambar" style="height:70px; width:90px; "> </a>
+                <br>
                 <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
-                        <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Menu <span class="sr-only"></span></a> </li>
-
+                        <li class="nav-item"> <a class="nav-link active" href="index.php" style="color: #333; font-weight:400;">Home <span class="sr-only">(current)</span></a> </li>
+                        <li class="nav-item"> <a class="nav-link active" href="restaurants.php" style="color: #333; font-weight:400;">Menu <span class="sr-only"></span></a> </li>
                         <?php
                         if (empty($_SESSION["user_id"])) {
-                            echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
-							  <li class="nav-item"><a href="registration.php" class="nav-link active">Signup</a> </li>';
+                            echo '<li class="nav-item"><a href="login.php" class="nav-link active" style="color: #333; font-weight:400;">Login</a> </li>
+							  <li class="nav-item"><a href="registration.php" class="nav-link active" style="color: #333; font-weight:400;">Sign up</a> </li>';
                         } else {
-                            echo  '<li class="nav-item"><a href="your_orders.php" class="nav-link active">Pesanan Saya</a> </li>';
-                            echo  '<li class="nav-item"><a href="logout.php" class="nav-link active">Logout</a> </li>';
+                            echo  '<li class="nav-item"><a href="your_orders.php" style="color:black;" class="nav-link active">Pesanan Saya</a> </li>';
+                            echo  '<li class="nav-item"><a href="logout.php" style="color:black;" class="nav-link active">Logout</a> </li>';
                         }
-
                         ?>
-
                     </ul>
                 </div>
             </div>
         </nav>
         <!-- /.navbar -->
+
     </header>
     <div class="page-wrapper">
         <!-- top Links -->
@@ -73,12 +65,13 @@ include_once 'product-action.php'; //including controller
             </div>
         </div>
         <!-- end:Top links -->
+
         <!-- start: Inner page hero -->
-        <?php $ress = mysqli_query($db, "select * from restaurant where rs_id='$_GET[res_id]'");
+        <?php $ress = mysqli_query($db, "select * from dishes_category where rs_id='$_GET[res_id]'");
         $rows = mysqli_fetch_array($ress);
 
         ?>
-        <section class="inner-page-hero bg-image" data-image-src="images/img/dish.jpeg">
+        <section class="inner-page-hero bg-image" data-image-src="images/ketring.jpg">
             <div class="profile">
                 <div class="container">
                     <div class="row">
@@ -96,7 +89,8 @@ include_once 'product-action.php'; //including controller
                                     <li class="nav-item"> <a class="nav-link active" href="#"><i class="fa fa-check"></i> Mulai Rp.6000</a> </li>
                                     <li class="nav-item"> <a class="nav-link" href="#"><i class="fa fa-motorcycle"></i> 30 min</a> </li>
                                     <li class="nav-item ratings">
-                                        <a class="nav-link" href="#"> <span>
+                                        <a class="nav-link" href="#">
+                                            <span>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -107,8 +101,6 @@ include_once 'product-action.php'; //including controller
                                 </ul>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
@@ -116,7 +108,6 @@ include_once 'product-action.php'; //including controller
         <!-- end:Inner page hero -->
         <div class="breadcrumb">
             <div class="container">
-
             </div>
         </div>
         <div class="container m-t-30">
@@ -204,7 +195,7 @@ include_once 'product-action.php'; //including controller
                                             <div class="col-xs-12 col-sm-12 col-lg-6">
                                                 <form method="post" action='dishes.php?res_id=<?php echo $_GET['res_id']; ?>&action=add&id=<?php echo $product['d_id']; ?>'>
                                                     <div class="rest-logo pull-left">
-                                                        <a class="restaurant-logo pull-left" href="#"><?php echo '<img src="admin/Res_img/dishes/' . $product['img'] . '" alt="Food logo" style="width: 300px; height:80px;">'; ?></a>
+                                                        <a class="restaurant-logo pull-left" href="#"><?php echo '<img src="admin/Res_img/dishes/' . $product['img'] . '" alt="image" style="width: 200px; height:70px;">'; ?></a>
                                                     </div>
                                                     <!-- end:Logo -->
                                                     <div class="rest-descr">
@@ -246,32 +237,53 @@ include_once 'product-action.php'; //including controller
         <!-- end:row -->
     </div>
     <!-- start: FOOTER -->
-    <footer class="footer">
-        <div>
-            <div class="text-center">
-                <img src="images/assets/logocrop.png" style="width:150px" alt="Logo-Footer">
+    <footer style="background-color:#fffff0; padding-top:70px; padding-bottom:40px">
+        <div class="container" style="display:grid; grid-template-columns: 1fr 1fr 1fr 1fr">
+            <div>
+                <img src="images/assets/logo-footer.png" alt="Logo Footer" width="250px">
             </div>
-            <div class="text-center mt-5">
-                <ul style="display:flex;">
-                    <li>
-                        <a href="#"><img src="images/assets/iconwa.png" style="width:50px;" alt="Icon-Wa"></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="images/assets/iconfb.png" style="width:40px;" alt="Icon-Wa"></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="images/assets/iconemail.png" style="width:40px;" alt="Icon-Wa"></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="images/assets/iconig.png" style="width:40px;" alt="Icon-Wa"></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="images/assets/iconfb.png" style="width:40px;" alt="Icon-Wa"></a>
-                    </li>
-                </ul>
+            <div class="tentang">
+                <h2 style="font-size:20px; margin-bottom:50px; color: #a3816a; font-weight:600; letter-spacing:1.5px; text-transform: uppercase;">Tentang Kami</h2>
+                <div>
+                    <i class="fa-solid fa-star" style="float: left; margin-right: 5px;"></i>
+                    <p style="display: inline;">Katering harian 3-4 Porsi</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-star" style="float: left; margin-right: 5px;"></i>
+                    <p style="display: inline;">Free ongkir area Jember Kota</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-star" style="float: left; margin-right: 5px;"></i>
+                    <p style="display: inline;">Pesan 1 hari bisa</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-star" style="float: left; margin-right: 5px;"></i>
+                    <p style="display: inline;">Melayani pemesanan nasi kotak, tumpeng & aneka kue</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-star" style="float: left; margin-right: 5px;"></i>
+                    <p style="display: inline;">Melayani pemesanan nasi kotak, tumpeng & aneka kue</p>
+                </div>
             </div>
-            <div class="text-center">
-                <p>Copyright &copy; 2023. Developed by Team D3</p>
+            <div class="kontak">
+                <h2 style="font-size:20px; margin-bottom:50px; color: #a3816a; font-weight:600; letter-spacing:1.5px; text-transform: uppercase;">Hubungi Kami</h2>
+                <div>
+                    <i class="fa-solid fa-house" style="float: left; margin-right: 5px;"></i>
+                    <p style="display: inline;">Jl. Gunung Lor Surabaya</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-envelope" style="float: left; margin-right: 5px;"></i>
+                    <p style="display: inline;">cb57catering2@gmail.com</p>
+                </div>
+                <div>
+                    <i class="fa-brands fa-whatsapp" style="float: left; margin-right: 5px;"></i>
+                    <p style="display: inline;">081234567890</p>
+                </div>
+            </div>
+            <div class="jam">
+                <h2 style="font-size:20px; margin-bottom:50px; color: #a3816a; font-weight:600; letter-spacing:1.5px; text-transform: uppercase;">Jam Operasional Kami</h2>
+                <p style="display:inline">Senin - Sabtu : 08.00 -16.00</p>
+                <p>Minggu & Hari Besar : Tutup</p>
             </div>
         </div>
     </footer>

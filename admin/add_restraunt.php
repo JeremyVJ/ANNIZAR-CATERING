@@ -58,7 +58,7 @@ if(isset($_POST['submit']))
 												
 												$res_name=$_POST['res_name'];
 				                                 
-												$sql = "INSERT INTO restaurant(c_id,title,email,phone,url,o_hr,c_hr,o_days,address,image) VALUE('".$_POST['c_name']."','".$res_name."','".$_POST['email']."','".$_POST['phone']."','".$_POST['url']."','".$_POST['o_hr']."','".$_POST['c_hr']."','".$_POST['o_days']."','".$_POST['address']."','".$fnew."')";  // store the submited data ino the database :images
+												$sql = "INSERT INTO dishes_category(c_id,title,email,phone,url,o_hr,c_hr,o_days,address,image) VALUE('".$_POST['c_name']."','".$res_name."','".$_POST['email']."','".$_POST['phone']."','".$_POST['url']."','".$_POST['o_hr']."','".$_POST['c_hr']."','".$_POST['o_days']."','".$_POST['address']."','".$fnew."')";  // store the submited data ino the database :images
 												mysqli_query($db, $sql); 
 												move_uploaded_file($temp, $store);
 			  
@@ -120,7 +120,7 @@ if(isset($_POST['submit']))
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/helper.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style1.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
     <!--[if lt IE 9]>
@@ -379,7 +379,7 @@ if(isset($_POST['submit']))
                                                     <label class="control-label">Select Category</label>
 													<select name="c_name" class="form-control custom-select" data-placeholder="Choose a Category" tabindex="1">
                                                         <option>--Select Category--</option>
-                                                 <?php $ssql ="select * from res_category";
+                                                 <?php $ssql ="select * from package_category";
 													$res=mysqli_query($db, $ssql); 
 													while($row=mysqli_fetch_array($res))  
 													{

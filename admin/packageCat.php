@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
 															</div>';
     } else {
 
-        $check_cat = mysqli_query($db, "SELECT title FROM restaurant where title = '" . $_POST['title'] . "' ");
+        $check_cat = mysqli_query($db, "SELECT title FROM dishes_category where title = '" . $_POST['title'] . "' ");
 
 
 
@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
         } else {
 
 
-            $mql = "INSERT INTO restaurant(title) VALUES('" . $_POST['title'] . "')";
+            $mql = "INSERT INTO dishes_category(title) VALUES('" . $_POST['title'] . "')";
             mysqli_query($db, $mql);
             $success =     '<div class="alert alert-success alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -52,7 +52,7 @@ if (isset($_POST['submit'])) {
     <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/helper.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style1.css" rel="stylesheet">
 </head>
 
 <body class="fix-header">
@@ -108,10 +108,10 @@ if (isset($_POST['submit'])) {
 
                         <!-- Profile -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/users/5.jpg" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/jims.jpg" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                                 <ul class="dropdown-user">
-                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
+                                    <li><a href="logout.php"><i class="fa fa-power-off"></i> Keluar</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -182,7 +182,7 @@ if (isset($_POST['submit'])) {
                         <div class="col-lg-12">
                             <div class="card card-outline-primary">
                                 <div class="card-header">
-                                    <h4 class="m-b-0 text-white">Add Restaurant Category</h4>
+                                    <h4 class="m-b-0 text-white">Tambah Paket Kategori</h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="form-body">
@@ -198,7 +198,7 @@ if (isset($_POST['submit'])) {
                                                             <option value="">Pilih Kategori</option>
                                                             <?php
                                                             // Query untuk mengambil data kategori dari database
-                                                            $category_query = "SELECT c_id, c_name FROM res_category";
+                                                            $category_query = "SELECT c_id, c_name FROM package_category";
                                                             $category_result = mysqli_query($db, $category_query);
 
                                                             // Loop untuk menambahkan setiap kategori ke listbox
@@ -211,8 +211,8 @@ if (isset($_POST['submit'])) {
                                                         <label for="image">Gambar Paket:</label>
                                                         <input type="file" name="image" id="image" required><br><br>
                                                         <div class="form-actions">
-                                                            <input type="submit" name="submit" class="btn btn-success" value="Save">
-                                                            <a href="dashboard.php" class="btn btn-inverse">Cancel</a>
+                                                            <input type="submit" name="submit" class="btn btn-success" value="Simpan">
+                                                            <a href="packageCat.php" class="btn btn-inverse">Batal</a>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -227,7 +227,7 @@ if (isset($_POST['submit'])) {
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">Listed Categories</h4>
+                                    <h4 class="card-title">Seluruh Kategori</h4>
 
                                     <div class="table-responsive m-t-40">
                                         <table id="myTable" class="table table-bordered table-striped">
@@ -237,12 +237,12 @@ if (isset($_POST['submit'])) {
                                                     <th>ID</th>
                                                     <th>Paket</th>
                                                     <th>Gambar</th>
-                                                    <th>Action</th>
+                                                    <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                $sql = "SELECT * FROM restaurant order by rs_id desc";
+                                                $sql = "SELECT * FROM dishes_category order by rs_id desc";
                                                 $query = mysqli_query($db, $sql);
 
                                                 if (!mysqli_num_rows($query) > 0) {
@@ -259,7 +259,7 @@ if (isset($_POST['submit'])) {
 
                                                         echo '<td>
                                                                 <a href="deletecategory2.php?cat_del=' . $rows['rs_id'] . '" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
-                                                                <a href="update_category2.php?cat_upd=' . $rows['rs_id'] . '" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
+                                                                <a href="update_category2.php?cat_upd=' . $rows['rs_id'] . '" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
                                                             </td>';
                                                         echo '</tr>';
                                                     }
