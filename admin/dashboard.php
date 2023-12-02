@@ -17,8 +17,8 @@ if (empty($_SESSION["adm_id"])) {
         <meta name="description" content="">
         <meta name="author" content="">
         <!-- Favicon icon -->
-        <link rel="icon" type="image/png" sizes="16x16" href="images/1.png">
-        <title>Admin Page</title>
+        <link rel="icon" type="image/png" href="images/logo-icon.png">
+        <title>Admin Dashboard</title>
         <!-- Bootstrap Core CSS -->
         <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
         <!-- Custom CSS -->
@@ -42,7 +42,8 @@ if (empty($_SESSION["adm_id"])) {
                     <div class="navbar-header">
                         <a class="navbar-brand" href="index.html">
                             <!-- Logo icon -->
-                            <b><img src="images/logo-x.png" alt="homepage" class="dark-logo" /></b>
+                            <b><img src="images/logo-admin.png" style="width: 55px; height:55px;" alt="homepage" class="dark-logo" /></b>
+                            <span><img src="images/text-icon.png" style="width: 120px; height:60px;" alt="homepage" class="dark-logo" /></span>
                         </a>
                     </div>
                     <!-- End Logo -->
