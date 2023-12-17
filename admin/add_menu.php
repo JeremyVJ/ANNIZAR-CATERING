@@ -253,7 +253,7 @@ if ($restaurantResult) {
                         </div>
                         <div class="form-actions">
                             <input type="submit" name="submit" class="btn btn-success" value="Simpan">
-                            <a href="add_menu.php" class="btn btn-inverse">Batal</a>
+                            <a href="all_menu.php" class="btn btn-inverse">Kembali</a>
                         </div>
                         </form>
                     </div>

@@ -21,9 +21,9 @@ if (empty($_SESSION["user_id"])) {
             $SQL = "INSERT INTO users_orders(u_id, title, quantity, price) VALUES ('$user_id', '" . $item["title"] . "', '" . $item["quantity"] . "', '" . $item["price"] . "')";
             mysqli_query($db, $SQL);
 
-            $payment_method = $_POST['mod']; // Mendapatkan metode pembayaran yang dipilih
+            $payment_method = $_POST['mod']; 
 
-            // Cek metode pembayaran, jika "Transfer" maka arahkan ke WhatsApp
+            // Jika metode pembayaran trasfer maka akan langsung dialihkan ke WhatsApp
             if ($payment_method == "paypal") {
                 $whatsapp_message = 'Saya ingin membayar pesanan atas nama, ' . $username;
 
@@ -31,12 +31,11 @@ if (empty($_SESSION["user_id"])) {
                 echo '<script>
                     setTimeout(function() {
                         window.location.href = "' . $whatsappLink . '";
-                    }, 2000);
+                    }, 1500);
                 </script>';
             } else {
                 // Jika metode pembayaran "Tunai," tidak melakukan redirect ke WhatsApp
                 $success = "Thank you! Your order has been placed successfully!";
-                // Tambahkan logika atau pesan lain sesuai kebutuhan
             }
         }
     }
@@ -61,6 +60,7 @@ if (empty($_SESSION["user_id"])) {
         <link href="css/index.css" rel="stylesheet">
         <!-- Custom styles for this template -->
         <link href="css/style-fix.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-" crossorigin="anonymous" />
     </head>
 
     <body>
@@ -155,7 +155,7 @@ if (empty($_SESSION["user_id"])) {
                                                     <li>
                                                         <label class="custom-control custom-radio  m-b-10">
                                                             <input name="mod" type="radio" value="paypal" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Transfer</span>
-                                                            <br><span>Pembayaran via Transfer dapat dilakukan via whatsapp nomor Admin</span> </label>
+                                                            <br><span>Pembayaran via Transfer dapat dilakukan dengan admin via whatsApp</span> </label>
                                                     </li>
                                                 </ul>
                                                 <p class="text-xs-center"> <input type="submit" onclick="return confirm('Are you sure?');" name="submit" class="btn btn-outline-success btn-block" value="Pesan Sekarang"> </p>

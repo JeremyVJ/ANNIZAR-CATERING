@@ -15,7 +15,7 @@ session_start(); //start temp session until logout/browser closed
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" href="images/assets/logo-icon.png">
-    <title>Dashboard</title>    
+    <title>Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-" crossorigin="anonymous" />
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -83,7 +83,7 @@ session_start(); //start temp session until logout/browser closed
                     <input type="radio" name="radio-buttons" id="img-3" checked />
                     <li class="slide-container">
                         <div class="slide-image">
-                            <img class="img-custom" src="images/promo2.png">
+                            <img class="img-custom" src="images/promoz.png">
                         </div>
                     </li>
 
@@ -247,40 +247,40 @@ session_start(); //start temp session until logout/browser closed
                 </div>
                 <div>
                     <i class="fa-solid fa-star" style="float: left; margin-right: 5px;"></i>
-                    <p style="display: inline;">Free ongkir area Jember Kota</p>
+                    <p style="display: inline;">Free ongkir area Situbondo Kota</p>
                 </div>
                 <div>
                     <i class="fa-solid fa-star" style="float: left; margin-right: 5px;"></i>
-                    <p style="display: inline;">Pesan 1 hari bisa</p>
-                </div>
-                <div>
-                    <i class="fa-solid fa-star" style="float: left; margin-right: 5px;"></i>
-                    <p style="display: inline;">Melayani pemesanan nasi kotak, tumpeng & aneka kue</p>
+                    <p style="display: inline;">Pesan minimal h-1 hari</p>
                 </div>
                 <div>
                     <i class="fa-solid fa-star" style="float: left; margin-right: 5px;"></i>
                     <p style="display: inline;">Melayani pemesanan nasi kotak, tumpeng & aneka kue</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-star" style="float: left; margin-right: 5px;"></i>
+                    <p style="display: inline;">Melayani paket prasmanan acara</p>
                 </div>
             </div>
             <div class="kontak">
                 <h2 style="font-size:20px; margin-bottom:50px; color: #a3816a; font-weight:600; letter-spacing:1.5px; text-transform: uppercase;">Hubungi Kami</h2>
                 <div>
                     <i class="fa-solid fa-house" style="float: left; margin-right: 5px;"></i>
-                    <p style="display: inline;">Jl. Gunung Lor Surabaya</p>
+                    <p style="display: inline;">Jl. Merak Gg. Baru No.15, Plosoan, Patokan, Kec. Situbondo, Kabupaten Situbondo</p>
                 </div>
                 <div>
-                    <i class="fa-solid fa-envelope" style="float: left; margin-right: 5px;"></i>
-                    <p style="display: inline;">cb57catering2@gmail.com</p>
+                    <i class="fa-solid fa-envelope" style="float: left; margin-right: 5px; margin-top:10px"></i>
+                    <p style="display: inline;">cateringanizzar@gmail.com</p>
                 </div>
                 <div>
                     <i class="fa-brands fa-whatsapp" style="float: left; margin-right: 5px;"></i>
-                    <p style="display: inline;">081234567890</p>
+                    <p style="display: inline;">081333895215</p>
                 </div>
             </div>
             <div class="jam">
                 <h2 style="font-size:20px; margin-bottom:50px; color: #a3816a; font-weight:600; letter-spacing:1.5px; text-transform: uppercase;">Jam Operasional Kami</h2>
-                <p style="display:inline">Senin - Sabtu : 08.00 -16.00</p>
-                <p>Minggu & Hari Besar : Tutup</p>
+                <p style="display:inline; font-weight:bold;">Buka 24 Jam Setiap Hari</p>
+                <p>Libur Nasional & Hari Besar : Tutup</p>
             </div>
         </div>
     </footer>

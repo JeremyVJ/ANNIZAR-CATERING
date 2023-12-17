@@ -748,7 +748,7 @@ hr {
 
 .food-item-wrap:hover h5 > a,
 .food-item-wrap:hover .right-text > a {
-  color:burlywood;
+  color: burlywood;
 }
 
 .food-item-wrap .figure-text {
@@ -1390,7 +1390,8 @@ App section
 *  Footer
 ============================*/
 
-
+@media (min-width: 320px) and (max-width: 768px) {
+}
 
 .payment-options ul li {
   display: inline-block;
@@ -1398,27 +1399,24 @@ App section
 }
 
 .footer {
-    background-color:rgb(255, 247, 0);
-    padding: 30px 0;
+  background-color: rgb(255, 247, 0);
+  padding: 30px 0;
 }
 
 .footer-container {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .footer-section {
-    flex: 1;
-    margin-right: 20px;
-
+  flex: 1;
+  margin-right: 20px;
 }
 
 .footer-section h4 {
-    font-size: 18px;
-    margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
-
-
 
 .address h5 a {
   color: #f30;
@@ -1437,7 +1435,6 @@ App section
   width: 49%;
 }
 
-
 .how-it-works-links {
   margin-bottom: 70px;
 }
@@ -1446,9 +1443,7 @@ App section
   margin-bottom: 35px;
 }
 
-
 @media (min-width: 320px) and (max-width: 768px) {
-
 }
 
 .inner-page-hero {

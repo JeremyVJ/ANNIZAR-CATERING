@@ -133,11 +133,10 @@ if (empty($_SESSION["adm_id"])) {
                         <h3 class="text-primary">Dashboard</h3>
                     </div>
                 </div>
-                <iframe title="Report Section" width="1000" height="486" src="https://app.powerbi.com/view?r=eyJrIjoiZjAxMzYxZGQtMjZjNi00MDJkLWIxZGMtNzI1MGZjZWYwZmM2IiwidCI6IjUyNjNjYzgxLTU5MTItNDJjNC1hYmMxLWQwZjFiNjY4YjUzMCIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
+                <!-- Power BI Dashboard -->
+                <iframe title="Report Section" width="1000" height="780" src="https://app.powerbi.com/view?r=eyJrIjoiZGViNTAyNjctYjM1Zi00OGUyLWEwNmEtMmJiN2IyNWYxNzY3IiwidCI6IjUyNjNjYzgxLTU5MTItNDJjNC1hYmMxLWQwZjFiNjY4YjUzMCIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>
                 <!-- End Bread crumb -->
                 <!-- Container fluid  -->
-
-                <!-- End footer -->
             </div>
             <!-- End Page wrapper  -->
         </div>
